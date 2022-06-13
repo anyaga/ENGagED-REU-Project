@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(228, 222, 222);
+  }
+  
+  container{
+      position: relative;
+  }
+
+  .h1 {
+    color: black;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+  }
+  
+  .h2 {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .p {
+    font-family: Roboto;
+    font-size: 20px;
+  }
+
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("sample_leader.jpg");
+    min-height: 50%;
+  }
+
+  .center {
+    color: black;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+  }
+
+  .top {
+    color: white;
+    padding: 20px 20px
+
+  }
+
+
+ 
