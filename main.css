@@ -29,7 +29,7 @@ body {
   .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("sample-leadership.jpg");
+    background-image: url("images/sample-leadership.jpg");
     min-height: 50%;
   }
 
