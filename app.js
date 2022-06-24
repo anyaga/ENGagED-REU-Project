@@ -1,11 +1,10 @@
 //Fix this function
-
-function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
+/*
+function onClick() 
+{
+    document.getElementById("demo").innerHTML = --; // should open a pop-up
+}
+*/
   
   // Change style of navbar on scroll
   window.onscroll = function() {myFunction()};
@@ -26,4 +25,26 @@ function onClick(element) {
       } else {
           x.className = x.className.replace(" w3-show", "");
       }
+  }
+
+  function myPop() 
+  {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+
+  /*---Collapsible---*/
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
   }
