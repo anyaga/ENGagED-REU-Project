@@ -56,4 +56,18 @@ function onClick()
   });
   
   /*--Opening and Closing Collapsible--*/
-  var instance = M.Collapsible.getInstance(elem);
+ /* var instance = M.Collapsible.getInstance(elem);*/
+
+ document.querySelectorAll('.collapsible_button').forEach(button => {
+    button.addEventListener('click', () => {
+        //const collapsibleContent = button.nextElementSibling;
+        button.classList.toggle('.active, .collapsible_button:hover');
+        /*
+        if(button.classList.contains('.active, .collapsible_button:hover')) {
+            collapsibleContent.style.maxHeight = collapsible.scrollHeight + 'px';
+        } else {
+            collapsibleContent.style.maxHeight = 0;
+        }
+        */
+    });
+ });

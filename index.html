@@ -68,21 +68,38 @@
         </div>
 
         <!--Examples as collapsibles-->
-        <button type="button" class="collapsible"> Example 1</button>
-        <div class="content">
-            <p>
-               Some content for Example 1.
-            </p>
+        <div class = "collapsible">
+          <button type="button" class="collapsible_button"> Example 1</button>
+          <div class="collapsible_content">
+              <p>
+                Some content for Example 1.
+              </p>
+          </div>
         </div>
 
 
-
-        <button type="button" class="collapsible"> Example 2</button>
-        <div class="content">
-            <p>
-               Some content for Example 2.
-            </p>
+        <div>
+          <button type="button" class="collapsible_button"> Example 2</button>
+          <div class="collapsible_content">
+              <p>
+                content for Example 2.
+              </p>
+          </div>
         </div>
+
+        <script>
+          document.querySelectorAll('.collapsible_button').forEach(button => {
+              button.addEventListener('click', () => {
+                  const collapsibleContent = button.nextElementSibling;
+                  button.classList.toggle('.active, .collapsible_button:hover');
+                  if(button.classList.contains('.active, .collapsible_button:hover')) {
+                      collapsibleContent.style.maxHeight = collapsible.scrollHeight + 'px';
+                  } else {
+                      collapsibleContent.style.maxHeight = 0;
+                  }
+              });
+          });
+        </script>
 
 
         <!--Other collapsible-->

@@ -98,26 +98,41 @@ container{
   }
 
   /*--------------Collapsible-------*/
-  .collapsible {
-    background-color: rgb(152, 55, 17);
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+  .collapsible_button {
+    display: block; /**/
+    background-color: rgb(152, 55, 17); /**/
+    color: rgb(0, 0, 0); /**/
+    cursor: pointer; /**/
+    padding: 18px; /**/
+    width: 100%; /**/
+    border: none; /**/
+    text-align: left; /**/
+    outline: none; /**/
+    /*font-size: 15px;*/
+    transition: backgroudnd 0.2s;
   }
   
-  .active, .collapsible:hover {
+  
+  .active, .collapsible_button:hover {
     background-color: rgb(168, 85, 85);
   }
   
-  .content {
-    padding: 18px;
-    display: none;
+  
+  .collapsible_content {    
+    /*
     overflow: hidden;
-    background-color: #af765c;
+    max-height: 0; 
+    transition: max-height 0.2s; */
+
+    padding: 0 18px; /**/
+    font-family: sans-serif; /**/
+    display: none;
+    background: #af765c; /**/
+    overflow: auto;
   }
   
+  .active, .collapsible_button:hover + .collapsible_content
+  {
+    display: block;
+    background-color: rgb(168, 85, 85);
+  }
