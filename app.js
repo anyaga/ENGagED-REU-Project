@@ -1,10 +1,10 @@
 //Fix this function
-/*
+
 function onClick() 
 {
-    document.getElementById("demo").innerHTML = --; // should open a pop-up
+    /*document.getElementById("demo").innerHTML = --; */// should open a pop-up
 }
-*/
+
   
   // Change style of navbar on scroll
   window.onscroll = function() {myFunction()};
@@ -33,7 +33,7 @@ function onClick()
     popup.classList.toggle("show");
   }
 
-  /*---Collapsible---*/
+  /*---Collapsible--
   var coll = document.getElementsByClassName("collapsible");
   var i;
   
@@ -48,3 +48,12 @@ function onClick()
       }
     });
   }
+  */
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
+  
+  /*--Opening and Closing Collapsible--*/
+  var instance = M.Collapsible.getInstance(elem);
