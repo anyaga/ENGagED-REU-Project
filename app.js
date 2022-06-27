@@ -51,7 +51,7 @@ var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 //Open and close listener
 modBtn.addEventListener('click', openModal); 
-closeBtn.addEventListener('click', closeModal);
+//closeBtn.addEventListener('click', closeModal);
 
 //Outside Click
 window.addEventListener('click', outsideClick);
@@ -61,11 +61,12 @@ function openModal()
   modal.style.display = 'block';
 }
 
+/*
 function closeModal()
 {
   modal.style.display = 'none';
 }
-
+*/
 function outsideClick(e)
 {
   if(e.target == modal)
