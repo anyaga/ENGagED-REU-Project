@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
     <head>
         <title> Angel REU Design</title>   
-        <!--<meta charset="UTF-8">-->
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--???-->
         <!--font start-->
         <link rel ="stylesheet" href="main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,127 +45,107 @@
     </head>
     <body>         
         <!--Navigation Bar-->
-        <ul>
-            <li><a href="#about" onclick="myPop()">ABOUT
-                <span class="popuptext" id="myPopup">About Popup!</span>
+       <ul>
+            <li><a id="modalBtn" >ABOUT
+                    <div id="simModal" class="modal">
+                        <div class="modal-content">
+                            <span class="closeBtn">&times;</span>
+                            <p>About the Engage REU and how I got involved
+                               in it.......
+                            </p>
+                        </div>
+                    </div>
             </a></li>
-            <li><a href="#contact" onclick="myPop()">CONTACT
-                <span class="popuptext" id="myPopup">Contact Popup!</span>
+            <li><a href="https://coleyspacelab.com/" 
+                    onclick="toggleFunction()">SPACE LAB
             </a></li>
-            <li><a href="https://coleyspacelab.com/" onclick="toggleFunction()">SPACE LAB</a></li>
-        </ul>   
-
-
+       </ul> 
 
         <!--Background Image-->
         <header class = "bgimg top">
             <table></table>"
-            <div class="center"><b>Different Aspects of Leadership</b></div>   
+            <!--<div class="center"><b>Different Aspects of Leadership</b></div>-->
         </header>
-        <div>
-            <h2><b>Description</b></h2>
-            <p> Leadership........ADD MORE....
-            </p>
-        </div>
 
-        <!--Examples as collapsibles-->
+
+
+
+        <h2><strong>Abstract</strong></h2>
+        <p><img src="images/twoblackgirls.png" alt="Two Black Girls"
+            style="float:right;width:280px;height:260px;">
+                Leadership has a been a term that is usually misconstrued. 
+            While many see leadership as the ability to direct teams to 
+            deadlines or goals in an appropriate time span, more goes into 
+            making a good leader. True leadership is the ability to help 
+            other reach their full potential. While this could tie into 
+            reaching goals and deadlines, leadership isn’t bound to this. 
+            True leadership involved personal growth (---find quote that 
+            discuss this type of leadership----). Engineering is a field 
+            that has struggled heavily with portraying true leadership. 
+            With a focus on creation of a product or meeting particular 
+            deadlines, engineers often fail to foster a community in which 
+            all members of a team can succeed. (----find quote supporting 
+            this ------) Given the racial disparities within the 
+            engineering field, this failure in engineering leadership has 
+            even greater effects on marginalized groups. (---add statistic 
+            on engineering leadership for marginalized groups--). 
+            </p>
+            <p>
+            Given this status, marginalized engineer must take on 
+            particular types of leadership to help themselves and 
+            individuals with similar identities to succeed. (---methods---)
+            (--data analysis--). Through the analysis of several interviews 
+            using the multidimensional model of racial identity and critical 
+            race theory, three leadership archetypes where established that 
+            would best help marginalized groups succeed in engineering. 
+            These archetypes included the advocate leader, the 
+            self-preserving leader, and the “non-traditional” leader. 
+            These forms of leadership create environments in which 
+            marginalized individual and groups can succeed.
+        </p>
+
+        <h2>Background</h2>
+        
+        <h2>Literature Review</h2>
+
+        <h2>Methods</h2>
+
+        <h2><strong>Findings</strong></h2>  <!--Examples as collapsibles-->
         <div class = "collapsible">
-          <button type="button" class="collapsible_button"> Example 1</button>
+          <button type="button" class="collapsible_button">
+                Advocate Leader</button>
           <div class="collapsible_content">
               <p>
                 Some content for Example 1.
               </p>
           </div>
-        </div>
 
-
-        <div>
-          <button type="button" class="collapsible_button"> Example 2</button>
+          <button type="button" class="collapsible_button">
+              Self-Preserving Leader</button>
           <div class="collapsible_content">
               <p>
                 content for Example 2.
               </p>
           </div>
+
+          <button type="button" class="collapsible_button">
+              Untraditional Leader</button>
+          <div class="collapsible_content">
+              <p>
+                content for Example 3.
+              </p>
+          </div>
         </div>
 
-        <script>
-          document.querySelectorAll('.collapsible_button').forEach(button => {
-              button.addEventListener('click', () => {
-                  const collapsibleContent = button.nextElementSibling;
-                  button.classList.toggle('.active, .collapsible_button:hover');
-                  if(button.classList.contains('.active, .collapsible_button:hover')) {
-                      collapsibleContent.style.maxHeight = collapsible.scrollHeight + 'px';
-                  } else {
-                      collapsibleContent.style.maxHeight = 0;
-                  }
-              });
-          });
-        </script>
+        <h2>Discussion</h2>
 
+        <h2>References</h2>
 
-        <!--Other collapsible-->
-
-        <ul class="collapsible popout">
-            <li>
-              <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-          </ul>
-
-
-
-
-        <div>
-            <h3> Example 1</h3>
-            <p> Content for Example 1</p>
-        </div>
-
-        <div>
-            <h3> Example 2</h3>
-            <p> Content for Example 2</p>
-        </div>
-
-        <div>
-            <h3> Example 3</h3>
-            <p> Content for Example 3</p>
-        </div>
-
-        <div>
-            <h3> Example 4</h3>
-            <p> Content for Example 4</p>
-        </div>
-
-        <div>
-            <h3> Example 5</h3>
-            <p> Content for Example 5</p>
-        </div>
+    <script src ="app.js"></script>
     </body>
 </html>
 
 
 <!--Write button function, write toggle function-->
 
-<div>
-    <div class="w3-container">
-        <h3><b>BLOG ENTRY</b></h3>
-        <h5>Title description April 2, 2014</span></h5>
-    </div>
-  
-      <div>
-        <p>Content, content, content, content.</p>
-        <div>
-          <div>
-            <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>

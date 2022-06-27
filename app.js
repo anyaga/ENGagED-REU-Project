@@ -33,41 +33,43 @@ function onClick()
     popup.classList.toggle("show");
   }
 
-  /*---Collapsible--
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-  
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-  */
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
-  });
-  
-  /*--Opening and Closing Collapsible--*/
- /* var instance = M.Collapsible.getInstance(elem);*/
-
- document.querySelectorAll('.collapsible_button').forEach(button => {
+/*--Opening and Closing Collapsible--*/
+ document.querySelectorAll('.collapsible_button').forEach(button =>{
     button.addEventListener('click', () => {
-        //const collapsibleContent = button.nextElementSibling;
         button.classList.toggle('.active, .collapsible_button:hover');
-        /*
-        if(button.classList.contains('.active, .collapsible_button:hover')) {
-            collapsibleContent.style.maxHeight = collapsible.scrollHeight + 'px';
-        } else {
-            collapsibleContent.style.maxHeight = 0;
-        }
-        */
     });
- });
+});
+
+/*------------MODAL=-----------*/
+
+var modal = document.getElementById('simModal');
+
+//Open and close modal
+var modBtn = document.getElementById('modalBtn');
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+//Open and close listener
+modBtn.addEventListener('click', openModal); 
+closeBtn.addEventListener('click', closeModal);
+
+//Outside Click
+window.addEventListener('click', outsideClick);
+
+function openModal()
+{
+  modal.style.display = 'block';
+}
+
+function closeModal()
+{
+  modal.style.display = 'none';
+}
+
+function outsideClick(e)
+{
+  if(e.target == modal)
+  {
+    modal.style.display = 'none';
+  }
+}
