@@ -61,13 +61,14 @@ body {
     cursor: pointer;
     padding: 18px;
     width: 100%; 
-    border: none; /**/
-    text-align: center; /**/
-    outline: none; /**/
+    border: none;
+    text-align: center; 
+    outline: none; 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
     transition: backgroudnd 0.2s;
-    margin-left: 50px;
+    margin-left: 50px; /*not working properly*/
+    margin-right: 50px;
   }
   
   .active, .collapsible_button:hover {
@@ -81,6 +82,8 @@ body {
     display: none;
     background: #af765c; /**/
     overflow: auto;
+    margin-left: 50px;
+    margin-right: 50px;
   }
   
   .active, .collapsible_button:hover + .collapsible_content
