@@ -59,7 +59,7 @@ body {
     background-color: rgb(92, 90, 87);
     color: rgb(0, 0, 0); 
     cursor: pointer;
-    padding: 18px;
+    padding: 15px;
     width: 100%; 
     border: none;
     text-align: center; 
@@ -67,8 +67,8 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
     transition: backgroudnd 0.2s;
-    margin-left: 50px; /*not working properly*/
-    margin-right: 50px;
+    margin-left: 50px;
+    margin-right: 50px; /*not working properly*/
   }
   
   .active, .collapsible_button:hover {
@@ -82,8 +82,8 @@ body {
     display: none;
     background: #af765c; /**/
     overflow: auto;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
   .active, .collapsible_button:hover + .collapsible_content
