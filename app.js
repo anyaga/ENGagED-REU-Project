@@ -1,12 +1,6 @@
 //Fix this function
-
-function onClick() 
-{
-    /*document.getElementById("demo").innerHTML = --; */// should open a pop-up
-}
-
   
-  // Change style of navbar on scroll
+  /* Change style of navbar on scroll
   window.onscroll = function() {myFunction()};
   function myFunction() {
       var navbar = document.getElementById("myNavbar");
@@ -17,6 +11,7 @@ function onClick()
       }
   }
   
+  
   // Used to toggle the menu on small screens when clicking on the menu button
   function toggleFunction() {
       var x = document.getElementById("navDemo");
@@ -26,6 +21,7 @@ function onClick()
           x.className = x.className.replace(" w3-show", "");
       }
   }
+  */
 
   function myPop() 
   {
