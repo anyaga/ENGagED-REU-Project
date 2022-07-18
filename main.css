@@ -25,10 +25,11 @@ body {
   }
 
   p {
-    font-family: Roboto;
+    font-family: Calibri;
     color: black;
     font-size: 18px;
-    margin: 50px;
+    text-align: left;
+    text-indent: 50px;
   }
 
   .bgimg {
@@ -38,7 +39,7 @@ body {
     min-height: 50%;
   }
 
-  .center {
+  center {
     color: gray;
     position: absolute;
     top: 45%;
