@@ -20,13 +20,7 @@ body {
 
   h3{
     color:#000;
-    font-size: 23px;
-    text-align: center;
-  }
-
-  h3{
-    color:#000;
-    font-size: 15x;
+    font-size: px;
     text-align: center;
   }
 
@@ -73,8 +67,7 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
     transition: backgroudnd 0.2s;
-    margin-left: 50px;
-    margin-right: 50px; /*not working properly*/
+
   }
   
   .active, .collapsible_button:hover {
@@ -83,19 +76,16 @@ body {
   
   .collapsible_content {    
     padding: 0 18px; /**/
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
     display: none;
-    background: #af765c; /**/
     overflow: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
   
   .active, .collapsible_button:hover + .collapsible_content
   {
     display: block;
-    background-color:  rgba(175, 171, 163, 0.988);
+    background-color: rgb(170, 166, 166);
   }
 
 /*--------------Modal-----------------------------------*/
