@@ -38,15 +38,6 @@ body {
     text-indent: 50px;
   }
 
-  mod {   
-    font-family: Calibri;
-    color: black;
-    font-size: 18px;
-    text-align: left;
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
   b {
     text-indent: -2em;
     margin-left: 20px;
