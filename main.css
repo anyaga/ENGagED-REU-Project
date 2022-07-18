@@ -32,6 +32,11 @@ body {
     text-indent: 50px;
   }
 
+  a {
+    text-indent: -2em;
+    margin-left: 20px;
+  }
+
   .bgimg {
     background-position: center;
     background-size: cover;
