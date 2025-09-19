@@ -6,3 +6,9 @@ This website was created as a visual representation of my research finds across 
 
 
 1. reformat app.js to be a python file
+
+activate environmet
+source .venv/bin/active
+
+deacivate envionment
+deactivate 
