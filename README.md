@@ -12,3 +12,9 @@ source .venv/bin/active
 
 deacivate envionment
 deactivate 
+
+#Set up database
+python manage.py migrate
+
+# Set up dev server
+python manage.py run server
