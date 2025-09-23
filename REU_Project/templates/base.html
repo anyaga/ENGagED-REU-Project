@@ -9,16 +9,19 @@
     </head>
     <body>         
         <!--Background Image-->
-        <div class="side-panel">
-            <a>x</a>
-            <a href="{% url 'abstract'%}">Abstract</a>
-            <a href="{% url 'find'%}">Findings</a>
-            <a href="{% url 'participants'%}">Participants</a>
-            <a href="{% url 'doc_preview'%}">Annotated Bibliography</a>
-            <a href="{% url 'references'%}">Referenes</a>
-        </div>
-        <button>☰ Table of Contents</button>
+
         <div class="header">
+            <div class="side-panel" style="width: {{ panel_size }};">
+                <a href="javascript:void(0)" class="close">x</a>
+                <a href="{% url 'abstract' action=action %}">Abstract</a>
+                <a href="{% url 'find'  action=action %}">Findings</a>
+                <a href="{% url 'participants'  action=action %}">Participants</a>
+                <a href="{% url 'doc_preview'  action=action %}">Annotated Bibliography</a>
+                <a href="{% url 'references'  action=action %}">Referenes</a>
+            </div>
+            <button class="open">☰ Table of Contents</button>
+
+
             <a class="link_title" href="{% url 'home' %}">
                 <h1>Angel's REU Project</h1>
                 <h3>An opportunity to learn from research</h3>

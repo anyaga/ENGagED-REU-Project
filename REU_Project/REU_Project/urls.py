@@ -19,11 +19,10 @@ from django.urls       import path
 from  .                import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path(""           ,views.home,    name="home"),
-    path("abstract"  ,views.abstract,name="abstract"),
-    path("findings"  ,views.find,    name="find"),
-    path("references",views.reference,     name="references"),
-    path("document_preview",views.doc_preview,name="doc_preview"),
-    path("participants",views.participants,name="participants" ),
+    path("abstract/<str:action>/"  ,views.abstract,name="abstract"),
+    path("findings/<str:action>/"  ,views.find,    name="find"),
+    path("references/<str:action>/",views.reference,     name="references"),
+    path("document_preview/<str:action>/",views.doc_preview,name="doc_preview"),
+    path("participants/<str:action>/",views.participants,name="participants" ),
 ]
