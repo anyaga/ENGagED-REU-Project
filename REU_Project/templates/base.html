@@ -8,8 +8,6 @@
         <link rel ="stylesheet" href="{% static 'main.css' %}">
     </head>
     <body>         
-
-
         <!--Background Image-->
         <div class="header">
             <h1>Angel's REU Project</h1>
@@ -74,7 +72,9 @@
             </table>
         </div>
 
-
+        <div class="page_title">
+            {% block title %}{% endblock %}
+        </div>
 
         <div class="main">
             {% block content %}
