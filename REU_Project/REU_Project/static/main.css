@@ -12,6 +12,11 @@ body, html {
   color: white;
 }
 
+.link_title{
+  text-decoration: none;
+  color:white;
+}
+
   
 .menu {
   display: none;
@@ -41,6 +46,10 @@ h1 {
   color:white;
   font-size: 35px;
   text-align: center;
+}
+
+h1:hover{
+  color: #5a5858;
 }
 
 h2 {
