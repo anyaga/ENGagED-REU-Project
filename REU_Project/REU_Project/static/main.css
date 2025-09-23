@@ -74,8 +74,13 @@ h4{
   color:#000;
   font-size: 25px;
   text-align: center;
-  padding: 1em;
+  padding: 2em;
   font-weight: bold;
+}
+
+.main{
+  margin-left: 7em;
+  margin-right: 7em;
 }
 
 p {
