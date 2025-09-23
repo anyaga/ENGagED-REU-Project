@@ -1,140 +1,37 @@
-<!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <title> Angel REU Design</title>   
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--???-->
-        <!--font start-->
-        <link rel ="stylesheet" href="main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-        <!--font end-->
-        
-        <style>
-            body, html {
-              height: 100%;
-              width: 100%;
-              font-family: "Roboto", sans-serif;
-            }
-            
-            .menu {
-              display: none;
-            }
+{% extends 'base.html' %}
+ 
+{% block content %}
 
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
+    <h2><strong>Introduction</strong></h2>
+    <p><img src="images/twoblackgirls.png" alt="Two Black Girls"
+        style="float:right;width:280px;height:260px;">
+        There are preconceived notions of what an engineer should be. 
+        Though we are living in a growingly diverse world, engineers 
+        continue to be seen as white men with a monolithic point of view. 
+        This image has created an exclusive environment through 
+        discouraging the participation of people of color and discouraging 
+        diversity of thought. This discouragement has placed serious 
+        limitations on the progression of the engineering field  due to its 
+        limited perspective on problems that effect more than just the 
+        predominate group in the field.
+    </p>
+    <p> Black and Latinx engineers in leadership positions encourages 
+        their success in the field and have the power to provide the field 
+        with the perspective it desperately needs. While diversity of 
+        students, staff, and thought are crucial to expanding the 
+        perspective of the engineering field, this perspective can only be 
+        provided if it is accepted by individuals in the field. Leaders 
+        ability to inspire others to believe a mission or aim for a 
+        particular goal equips marginalized engineering leaders with 
+        the skills to provide the perspective shift that is needed in the 
+        engineering field. Leadership also equips marginalized engineer 
+        with the skills to reach levels of success that wouldn’t have 
+        possible for other marginalized engineers. This study established 
+        archetypes of leadership that allow Black and Latinx engineers to 
+        suceed in the field. In this context, success is defined as the 
+        academic and professional success, excluding satisfaction in the 
+        field.    
+    </p>
 
-            li {float: left;}
+{% endblock %}
 
-            li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                }
-
-            li a:hover {background-color: #111;}
-        </style>
-    </head>
-    <body>         
-        <!--Navigation Bar-->
-       <ul>
-            <li><a id="modalBtn" >ABOUT
-                    <div id="simModal" class="modal">
-                        <div class="modal-content">
-                            <span class="closeBtn"></span>
-                            <!--<span class="closeBtn"></span> fix the X-->
-                            <h3 class="center">ABOUT</h3>
-                            <p>
-                                ENGagED REU was a research experience centered 
-                                around engineering education. As a part of this 
-                                program, I learned about different reseach 
-                                methods including qualitative and quantitative 
-                                work, I learned about different methods of data 
-                                analysis such as transcript coding and 
-                                qualitative data analysis, and I learned how to 
-                                convey my research findings.
-                            </p>
-                            <p>This process has allowed me to get a greater 
-                                understanding of problems within the engineering 
-                                education system and how they effect my journey. 
-                                While you could say engineering education 
-                                is nothing more than a curriculm, the research 
-                                I have come across proves that be a successful 
-                                engineer, multiple things need to be considered 
-                                such as the history of the field, the mental 
-                                health of the participants, the presence of 
-                                leadership in the field, and more.
-                            </p>
-                            <p>
-                                Special thank you to Katreena Thomas and Dr.
-                                Brooke Coley for being mentors throught this 
-                                process.
-                            </p>
-                        </div>
-                    </div>
-            </a></li>
-            <li><a href="https://docs.google.com/document/d/1g--onY2df96FPF8n-pfPkc2HSLYk_iS7c2_j8cFPCXI/edit?usp=sharing" 
-                onclick="toggleFunction()">ABSTRACT
-            </a></li>
-            <li><a href="https://docs.google.com/document/d/1uofUSbTUjShCiip40HaYByJ6tHmj33i5rJ2CKJ59AOg/edit?usp=sharing" 
-                onclick="toggleFunction()">ANNOTATED BIBLIOGRAPHY
-            </a></li>
-            <li><a href="https://coleyspacelab.com/" 
-                    onclick="toggleFunction()">SPACE LAB
-            </a></li>
-       </ul> 
-
-        <!--Background Image-->
-        <header class = "bgimg top">
-            <table></table>"
-            <!--<div class="center"><b>Different Aspects of Leadership</b></div>-->
-        </header>
-
-        <h2><strong>Introduction</strong></h2>
-        <p><img src="images/twoblackgirls.png" alt="Two Black Girls"
-            style="float:right;width:280px;height:260px;">
-            There are preconceived notions of what an engineer should be. 
-            Though we are living in a growingly diverse world, engineers 
-            continue to be seen as white men with a monolithic point of view. 
-            This image has created an exclusive environment through 
-            discouraging the participation of people of color and discouraging 
-            diversity of thought. This discouragement has placed serious 
-            limitations on the progression of the engineering field  due to its 
-            limited perspective on problems that effect more than just the 
-            predominate group in the field.
-        </p>
-        <p> Black and Latinx engineers in leadership positions encourages 
-            their success in the field and have the power to provide the field 
-            with the perspective it desperately needs. While diversity of 
-            students, staff, and thought are crucial to expanding the 
-            perspective of the engineering field, this perspective can only be 
-            provided if it is accepted by individuals in the field. Leaders 
-            ability to inspire others to believe a mission or aim for a 
-            particular goal equips marginalized engineering leaders with 
-            the skills to provide the perspective shift that is needed in the 
-            engineering field. Leadership also equips marginalized engineer 
-            with the skills to reach levels of success that wouldn’t have 
-            possible for other marginalized engineers. This study established 
-            archetypes of leadership that allow Black and Latinx engineers to 
-            suceed in the field. In this context, success is defined as the 
-            academic and professional success, excluding satisfaction in the 
-            field.    
-        </p>
-
-
-    </body>
-</html>
-
-
-<!--Write button function, write toggle function-->
-
-</div>

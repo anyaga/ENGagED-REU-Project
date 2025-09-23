@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <title> REU Design</title>   
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel ="stylesheet" href="{% static 'main.css' %}">
+    </head>
+    <body>         
+
+
+        <!--Background Image-->
+        <div class="header">
+            <h1>Angel's REU Project</h1>
+            <h3>An opportunity to learn from research</h3>
+        </div>
+
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'abstract'}">Abstract</a>
+            <a href="{% url 'find'%}">Findings</a>
+        </nav>
+
+        <div>
+            <table>
+                <!--Navigation Bar-->
+                <ul>
+                    <li><a id="modalBtn" >ABOUT
+                            <div id="simModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="closeBtn"></span>
+                                    <!--<span class="closeBtn"></span> fix the X-->
+                                    <h3 class="center">ABOUT</h3>
+                                    <p>
+                                        ENGagED REU was a research experience centered 
+                                        around engineering education. As a part of this 
+                                        program, I learned about different reseach 
+                                        methods including qualitative and quantitative 
+                                        work, I learned about different methods of data 
+                                        analysis such as transcript coding and 
+                                        qualitative data analysis, and I learned how to 
+                                        convey my research findings.
+                                    </p>
+                                    <p>This process has allowed me to get a greater 
+                                        understanding of problems within the engineering 
+                                        education system and how they effect my journey. 
+                                        While you could say engineering education 
+                                        is nothing more than a curriculm, the research 
+                                        I have come across proves that be a successful 
+                                        engineer, multiple things need to be considered 
+                                        such as the history of the field, the mental 
+                                        health of the participants, the presence of 
+                                        leadership in the field, and more.
+                                    </p>
+                                    <p>
+                                        Special thank you to Katreena Thomas and Dr.
+                                        Brooke Coley for being mentors throught this 
+                                        process.
+                                    </p>
+                                </div>
+                            </div>
+                    </a></li>
+                    <li><a href="https://docs.google.com/document/d/1g--onY2df96FPF8n-pfPkc2HSLYk_iS7c2_j8cFPCXI/edit?usp=sharing" 
+                        onclick="toggleFunction()">ABSTRACT
+                    </a></li>
+                    <li><a href="https://docs.google.com/document/d/1uofUSbTUjShCiip40HaYByJ6tHmj33i5rJ2CKJ59AOg/edit?usp=sharing" 
+                        onclick="toggleFunction()">ANNOTATED BIBLIOGRAPHY
+                    </a></li>
+                    <li><a href="https://coleyspacelab.com/" 
+                            onclick="toggleFunction()">SPACE LAB
+                    </a></li>
+                </ul> 
+            </table>
+        </div>
+
+
+
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+    
+</html>
+
+
+<!--Write button function, write toggle function-->
+
+</div>

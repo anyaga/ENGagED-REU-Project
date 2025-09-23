@@ -16,3 +16,6 @@ def reference(request):
 
 def doc_preview(request):
     return render(request,"doc_preview.html")
+
+def participants(request):
+    return render(request,"participants.html")
