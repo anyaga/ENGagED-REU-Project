@@ -9,17 +9,21 @@
     </head>
     <body>         
         <!--Background Image-->
+        <div class="side-panel">
+            <a>x</a>
+            <a href="{% url 'abstract'%}">Abstract</a>
+            <a href="{% url 'find'%}">Findings</a>
+            <a href="{% url 'participants'%}">Participants</a>
+            <a href="{% url 'doc_preview'%}">Annotated Bibliography</a>
+            <a href="{% url 'references'%}">Referenes</a>
+        </div>
+        <button>☰ Table of Contents</button>
         <div class="header">
             <a class="link_title" href="{% url 'home' %}">
                 <h1>Angel's REU Project</h1>
                 <h3>An opportunity to learn from research</h3>
             </a>
         </div>
-
-        <nav>
-            <a href="{% url 'abstract'}">Abstract</a>
-            <a href="{% url 'find'%}">Findings</a>
-        </nav>
 
         <div>
             <table>
@@ -59,12 +63,6 @@
                                     </p>
                                 </div>
                             </div>
-                    </a></li>
-                    <li><a href="https://docs.google.com/document/d/1g--onY2df96FPF8n-pfPkc2HSLYk_iS7c2_j8cFPCXI/edit?usp=sharing" 
-                        onclick="toggleFunction()">ABSTRACT
-                    </a></li>
-                    <li><a href="https://docs.google.com/document/d/1uofUSbTUjShCiip40HaYByJ6tHmj33i5rJ2CKJ59AOg/edit?usp=sharing" 
-                        onclick="toggleFunction()">ANNOTATED BIBLIOGRAPHY
                     </a></li>
                     <li><a href="https://coleyspacelab.com/" 
                             onclick="toggleFunction()">SPACE LAB
