@@ -32,12 +32,21 @@
             <table>
                 <!--Navigation Bar-->
                 <ul>
-                    <li><a id="modalBtn" >ABOUT
-                            <div id="simModal" class="modal">
+                    <li><a id="modalBtn" >
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" name="about-open">ABOUT</button>                                
+                            </form>                        
+
+                            <div id="simModal" class="modal" style="display: {{ display_value }};">
                                 <div class="modal-content">
                                     <span class="closeBtn"></span>
-                                    <!--<span class="closeBtn"></span> fix the X-->
+
                                     <h3 class="center">ABOUT</h3>
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" name="about-close">X</button>                                
+                                    </form>        
                                     <p>
                                         ENGagED REU was a research experience centered 
                                         around engineering education. As a part of this 
