@@ -31,22 +31,26 @@
         <div>
             <table>
                 <!--Navigation Bar-->
-                <ul>
-                    <li><a id="modalBtn" >
+                <ul id="id_outline_nav_bar">
+                    <li class="nav-bar-values"><a id="modalBtn" >
                             <form action="" method="POST">
                                 {% csrf_token %}
                                 <button id="id-about-open"type="submit" name="about-open">ABOUT</button>                                
                             </form>                        
 
                             <div id="simModal" class="modal" style="display: {{ display_value }};">
-                                <div class="modal-content">
-                                    <span class="closeBtn"></span>
-
-                                    <h3 class="center">ABOUT</h3>
-                                    <form action="" method="POST">
-                                        {% csrf_token %}
-                                        <button id="id-about-close" type="submit" name="about-close">X</button>                                
-                                    </form>        
+                                <div class="modal-content">                             
+                                    <div>
+                                        <ul>
+                                            <li class="inside-about" style="text-align: left;">
+                                                <form action="" method="POST">
+                                                    {% csrf_token %}
+                                                    <button id="id-about-close" type="submit" name="about-close">X</button>                                
+                                                </form>
+                                            </li>
+                                            <li class="inside-about"><h3 class="center">ABOUT</h3></li>
+                                        </ul>
+                                    </div>
                                     <p>
                                         ENGagED REU was a research experience centered 
                                         around engineering education. As a part of this 
@@ -76,7 +80,7 @@
                                 </div>
                             </div>
                     </a></li>
-                    <li><a href="https://coleyspacelab.com/" 
+                    <li  class="nav-bar-values"><a href="https://coleyspacelab.com/" 
                             onclick="toggleFunction()">SPACE LAB
                     </a></li>
                 </ul> 
