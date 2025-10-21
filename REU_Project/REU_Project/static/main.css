@@ -42,6 +42,20 @@ li a {
 
 li a:hover {background-color: #111;}
 
+#id-about-open{
+  border: none;
+  background-color: transparent;
+  color:white;
+  font-size:15px;
+}
+
+#id-about-close{
+  border: none;
+  background-color: transparent;
+}
+
+
+
 h1 {
   color:white;
   font-size: 2.4em;

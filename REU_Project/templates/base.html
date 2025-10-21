@@ -35,7 +35,7 @@
                     <li><a id="modalBtn" >
                             <form action="" method="POST">
                                 {% csrf_token %}
-                                <button type="submit" name="about-open">ABOUT</button>                                
+                                <button id="id-about-open"type="submit" name="about-open">ABOUT</button>                                
                             </form>                        
 
                             <div id="simModal" class="modal" style="display: {{ display_value }};">
@@ -45,7 +45,7 @@
                                     <h3 class="center">ABOUT</h3>
                                     <form action="" method="POST">
                                         {% csrf_token %}
-                                        <button type="submit" name="about-close">X</button>                                
+                                        <button id="id-about-close" type="submit" name="about-close">X</button>                                
                                     </form>        
                                     <p>
                                         ENGagED REU was a research experience centered 
