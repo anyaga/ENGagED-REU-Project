@@ -4,7 +4,6 @@ from django.shortcuts import render
 
 
 def helper_side_panel(request,action):
-    print(request.POST)
     display_value = "none"
     panel_size = "0em"
     if "about-open" in request.POST:
@@ -23,7 +22,6 @@ def helper_side_panel(request,action):
     return context
 
 def home(request,action="close"):
-    print("action" + str(action))
     context = helper_side_panel(request,action)
     return render(request, "index.html",context)
 

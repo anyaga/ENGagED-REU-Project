@@ -10,34 +10,33 @@
     <body>         
         <!--Background Image-->
 
-        <div class="header">
+        <div id="page_header">
             <div class="side-panel" style="width: {{ panel_size }};">
-
-                <form>
+                <form id="close_sidepanel">
                     {% csrf_token %}
-                    <button name="table_close" class="open" type="submit">x</button>                
+                    <button name="table_close" class="open" type="submit">*</button>                
                 </form>
-
-
                 <a href="{% url 'abstract' action=action %}">Abstract</a>
                 <a href="{% url 'find'  action=action %}">Findings</a>
                 <a href="{% url 'participants'  action=action %}">Participants</a>
                 <a href="{% url 'doc_preview'  action=action %}">Annotated Bibliography</a>
                 <a href="{% url 'references'  action=action %}">Referenes</a>
             </div>
-            <form action="" method="POST">
+            <form action="" id="open_sidepanel" method="POST">
                 {% csrf_token %}
-                <button name="table_of_contents" class="open" type="submit">☰ Table of Contents</button>
-            </form>            
+                <button name="table_of_contents" class="open" type="submit">☰</button>
+            </form>
 
-
-            <a class="link_title" href="{% url 'home' %}">
-                <h1>Angel's REU Project</h1>
+            <div id="title_block">
+                <a id="link_title" href="{% url 'home' %}">Angel's REU Project</a>
                 <h3>An opportunity to learn from research</h3>
-            </a>
+            </div>            
+            <!--a class="link_title" href="{% url 'home' %}">
+                <h1>Angel's REU Project</h1>
+                
+            </a!-->
         </div>
-
-        <div>
+        <div id="body_of_page">
             <table>
                 <!--Navigation Bar-->
                 <ul id="id_outline_nav_bar">
