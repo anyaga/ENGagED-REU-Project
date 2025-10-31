@@ -223,12 +223,13 @@ center {
   margin-right: 50px;
 }
 
+/*
 .active, .collapsible_button:hover + .collapsible_content
 {
   display: block;
   background-color: rgb(170, 166, 166);
 }
-
+*/
 /*--------------Modal-----------------------------------*/
 .button{
   padding: 1em 2em;
