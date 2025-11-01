@@ -85,11 +85,7 @@ h3{
   text-align: center;
 }
 
-h4{
-  color:#000;
-  font-size: 21px;
-  text-align: center;
-}
+
 
 .page_title{
   color:#000;
@@ -196,20 +192,36 @@ center {
 
 /*--------------Collapsible-------*/
 .collapsible_button {
+
+  font-size: 21px;
+  font-weight: bold;
+
+  padding:30px;
   display: block;
   background-color: rgb(92, 90, 87);
   color: rgb(0, 0, 0); 
   cursor: pointer;
-  padding: 15px;
   width: 100%; 
   border: none;
   text-align: center; 
   outline: none; 
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
   transition: backgroudnd 0.2s;
 
 }
+
+.collapsible_button:after{
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible_button.after:after{
+  content: "\2212";
+}
+
 
 .active, .collapsible_button:hover {
   background-color: rgba(70, 68, 65, 0.988);
@@ -219,17 +231,17 @@ center {
   padding: 0 18px; /**/
   display: none;
   overflow: auto;
-  margin-left: 50px;
-  margin-right: 50px;
+  background-color: rgb(170, 166, 166);
+  /*margin-left: 10px;
+  margin-right: 10px;*/
 }
 
-/*
+
 .active, .collapsible_button:hover + .collapsible_content
 {
   display: block;
-  background-color: rgb(170, 166, 166);
 }
-*/
+
 /*--------------Modal-----------------------------------*/
 .button{
   padding: 1em 2em;
