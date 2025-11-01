@@ -28,7 +28,7 @@
             </button>
         </form>
 
-        <div class="collapsible_content" style="display: {{ trad_leader }};">
+        <div id="trad_content" class="collapsible_content" style="display: {{ trad_leader }};">
             <p>
                 Traditional leaders are often what come to mind when you think 
                 of a leader. They are outspoken and charismatic,  they naturally 
@@ -85,7 +85,7 @@
                Proactive Non-traditional Leader
             </button>
         </form>
-        <div class="collapsible_content" style="display: {{ pro_leader }};">
+        <div id="proactive_content" class="collapsible_content" style="display: {{ pro_leader }};">
             <p>
                 Proactive non-traditional leaders are driven by their need 
                 to solve individual goals. While they share the same drive 
@@ -147,7 +147,7 @@
                 Self-preserving Non-traditional Leader
             </button>
         </form>
-        <div class="collapsible_content" style="display: {{ self_leader }};">
+        <div id="self_content "class="collapsible_content" style="display: {{ self_leader }};">
             <p>             
                 Self-preserving non-traditional leaders are defined by their 
                 ability to overcome difficult circumstance while maintaining their
@@ -185,6 +185,32 @@
             </p>
         </div>
     </div>
+    <script>
+        function accButtonDisplayToViews(){
+            //Send accordian button display values to views.y
+            const acc_content_sections = []
+
+            //Collect all the display values of the accoridan content
+            display_vals = {};
+            acc_content_sections.forEach(content_id => {
+                var element = document.getElementById(content_id);
+                var display = getComputedStyle(element).display;
+                display_vals[content_id] = display
+            });
+
+            //Send to django
+            fetch('/update_display/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken' : '{{ csrf_token }}'
+                },
+                body: JSON.stringify(display_vals)
+            }).then(response => response.json())
+              .then(data => console.log('Response:', data))
+              .catch(error => console.log('Error:', error));
+        }
+    </script>
 {% endblock %}
 
 
