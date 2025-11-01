@@ -27,7 +27,6 @@
                 Traditional Leader
             </button>
         </form>
-
         <div id="trad_content" class="collapsible_content" style="display: {{ trad_leader }};">
             <p>
                 Traditional leaders are often what come to mind when you think 
@@ -147,7 +146,7 @@
                 Self-preserving Non-traditional Leader
             </button>
         </form>
-        <div id="self_content "class="collapsible_content" style="display: {{ self_leader }};">
+        <div id="self_content" class="collapsible_content" style="display: {{ self_leader }};">
             <p>             
                 Self-preserving non-traditional leaders are defined by their 
                 ability to overcome difficult circumstance while maintaining their
@@ -188,7 +187,9 @@
     <script>
         function accButtonDisplayToViews(){
             //Send accordian button display values to views.y
-            const acc_content_sections = []
+            const acc_content_sections = ['trad_content',
+                                          'proactive_content',
+                                          'self_content']
 
             //Collect all the display values of the accoridan content
             display_vals = {};

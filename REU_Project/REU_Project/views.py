@@ -1,6 +1,7 @@
-from django.http      import HttpResponse
+from django.http      import HttpResponse, JsonResponse
 from django.shortcuts import render
 
+import json
 
 
 def helper_side_panel(request,action):
@@ -35,6 +36,17 @@ def find(request,action):
     trad = "none"
     pro = "none"
     self = "none"
+
+    #//////////////new,figure out what to do with them
+    if request.method == "POST":
+        #from 
+        data = json.loads(request.body)
+        traditonal = data.get("trad_content")
+        proactive  = data.get("proactve_content")
+        self_pres  = data.get("self_content")
+
+    #///////////////
+
     #Traditional Leader
     if "trad_leader" in request.POST:
         trad = "block"
