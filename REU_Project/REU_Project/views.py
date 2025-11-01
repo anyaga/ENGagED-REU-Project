@@ -31,23 +31,48 @@ def abstract(request,action):
     return render(request,"abstract.html",context)
 
 def find(request,action):
-    print("action: "+action)
-    print(request.POST)
+    #Automatically close the accordian tabs
     trad = "none"
-    pro = "none"
+    pro  = "none"
     self = "none"
 
-    #///////////new,figure out what to do with them
+    #If some action is taken
     if request.method == "POST":
-        #from 
+        print("here!!!")
         data = json.loads(request.body)
+
         traditonal = data.get("trad_content")
-        proactive  = data.get("proactve_content")
+        proactive  = data.get("proactive_content")
         self_pres  = data.get("self_content")
+
+        if "trad_leader" in request.POST:
+            if traditonal == "none":
+                trad = "block"
+            else:
+                trad = "none"
+            pro  = proactive
+            self = self_pres
+
+        if "pro_leader" in request.POST:
+            if proactive == "none":
+                pro = "block"
+            else:
+                pro = "none"
+            trad = traditonal
+            self = self_pres
+
+        if "self_leader" in request.POST:
+            if self_pres == "none":
+                self = "block"
+            else:
+                self = "none"
+            trad = traditonal
+            pro = proactive
 
     #////////////
 
     #Traditional Leader
+    '''
     if "trad_leader" in request.POST:
         trad = "block"
 
@@ -58,7 +83,7 @@ def find(request,action):
     #Self-preserving non-traditional leader
     if "self_leader" in request.POST:
         self = "block"
-
+    '''
     context = helper_side_panel(request,action)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
