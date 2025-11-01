@@ -21,14 +21,14 @@
         leadership and self-preserving leadership.
     </p>
     <div class = "collapsible">
-        <form method="POST">
+        <form action="" method="POST">
             {% csrf_token %}
-            <button name="trad_leader" type="button" class="collapsible_button">
+            <button class="collapsible_button" name="trad_leader" type="submit" >
                 Traditional Leader
             </button>
         </form>
 
-        <div class="collapsible_content">
+        <div class="collapsible_content" style="display: {{ trad_leader }};">
             <p>
             Traditional leaders are often what come to mind when you think 
             of a leader. They are outspoken and charismatic,  they naturally 
@@ -73,16 +73,16 @@
             engineering field, their natural ability to inspire a group 
             towards particular goals provides them with a place in the 
             field and the opportunity to expand perspectives. 
-        </p>
+            </p>
         </div>
 
         <form method="POST">
             {% csrf_token %}
-            <button name="pro_leader" type="button" class="collapsible_button">
+            <button class="collapsible_button" name="pro_leader" type="submit" >
                Proactive Non-traditional Leader
             </button>
         </form>
-        <div class="collapsible_content">
+        <div class="collapsible_content" style="display: {{ pro_leader }};">
             <p>
                 Proactive non-traditional leaders are driven by their need 
                 to solve individual goals. While they share the same drive 
@@ -134,47 +134,47 @@
                 action has the potential to create good habits that push a 
                 team toward their goals.
             </p>
-    </div>
+        </div>
         <form method="POST">
             {% csrf_token %}
-            <button name="self_leader" type="button" class="collapsible_button">
+            <button class="collapsible_button" name="self_leader" type="submit" >
                 Self-preserving Non-traditional Leader
             </button>
         </form>
-        <div class="collapsible_content">
+        <div class="collapsible_content" style="display: {{ self_leader }};">
             <p>             
-            Self-preserving non-traditional leaders are defined by their 
-            ability to overcome difficult circumstance while maintaining their
-            identity. Due to the harsh environments that often  surround 
-            this type of leader, they are able to use their unique traits to 
-            find creative solutions. This involves traits such as 
-            observation, active listening, and building one-on-one 
-            connections. While their impact may be hard to see, they 
-            nonetheless have the ability to drive people to meet goals. Jae 
-            demonstrated this leadership style while going over her 
-            experience in the professional engineering world. She says:  
-        </p>
-        <h4><i>
-            “...sometimes some of the trade contractors are definitely 
-            more abrasive and like, trying to tell you what they know, 
-            over listening to what you’re trying to tell them…they’re 
-            quick to jump down your throat or quick to try an tell you 
-            no, before getting your side of things,so I have to be able 
-            to kind of on the fly adapt to them.”
-        </i></h4>
-        <p>
-            Jae’s use of her unique personality traits allowed her to 
-            inspire other people within her field. Because of the 
-            preconvience notions other co-workers had of her, Jae 
-            couldn’t directly inspire them to complete a goal. Instead, 
-            Jae had to use skills not often associated with leadership 
-            such as active listening, trust, and reassurance to build 
-            her coworkers confidence in her ability and encourage 
-            coworkers to meet the goals of their projects. This 
-            leadership allows them to expand the perspective of some of 
-            their co-workers and lead their co-workers to particular 
-            goals.
-        </p>
+                Self-preserving non-traditional leaders are defined by their 
+                ability to overcome difficult circumstance while maintaining their
+                identity. Due to the harsh environments that often  surround 
+                this type of leader, they are able to use their unique traits to 
+                find creative solutions. This involves traits such as 
+                observation, active listening, and building one-on-one 
+                connections. While their impact may be hard to see, they 
+                nonetheless have the ability to drive people to meet goals. Jae 
+                demonstrated this leadership style while going over her 
+                experience in the professional engineering world. She says:  
+            </p>
+            <h4><i>
+                “...sometimes some of the trade contractors are definitely 
+                more abrasive and like, trying to tell you what they know, 
+                over listening to what you’re trying to tell them…they’re 
+                quick to jump down your throat or quick to try an tell you 
+                no, before getting your side of things,so I have to be able 
+                to kind of on the fly adapt to them.”
+            </i></h4>
+            <p>
+                Jae’s use of her unique personality traits allowed her to 
+                inspire other people within her field. Because of the 
+                preconvience notions other co-workers had of her, Jae 
+                couldn’t directly inspire them to complete a goal. Instead, 
+                Jae had to use skills not often associated with leadership 
+                such as active listening, trust, and reassurance to build 
+                her coworkers confidence in her ability and encourage 
+                coworkers to meet the goals of their projects. This 
+                leadership allows them to expand the perspective of some of 
+                their co-workers and lead their co-workers to particular 
+                goals.
+            </p>
         </div>
     </div>
 {% endblock %}

@@ -30,6 +30,8 @@ def abstract(request,action):
     return render(request,"abstract.html",context)
 
 def find(request,action):
+    print("action: "+action)
+    print(request.POST)
     trad = "none"
     pro = "none"
     self = "none"

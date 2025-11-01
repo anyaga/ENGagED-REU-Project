@@ -14,7 +14,7 @@
             <div class="side-panel" style="width: {{ panel_size }};">
                 <form id="close_sidepanel" method="POST">
                     {% csrf_token %}
-                    <button name="table_close" class="open" type="submit">*</button>                
+                    <button class="open" name="table_close" type="submit">*</button>                
                 </form>
                 <a href="{% url 'abstract' action=action %}">Abstract</a>
                 <a href="{% url 'find'  action=action %}">Findings</a>
@@ -24,7 +24,7 @@
             </div>
             <form action="" id="open_sidepanel" method="POST">
                 {% csrf_token %}
-                <button name="table_of_contents" class="open" type="submit">☰</button>
+                <button class="open" name="table_of_contents" type="submit">☰</button>
             </form>
 
             <div id="title_block">
