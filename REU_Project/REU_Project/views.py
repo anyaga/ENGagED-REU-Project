@@ -37,7 +37,7 @@ def find(request,action):
     pro = "none"
     self = "none"
 
-    #//////////////new,figure out what to do with them
+    #///////////new,figure out what to do with them
     if request.method == "POST":
         #from 
         data = json.loads(request.body)
@@ -45,7 +45,7 @@ def find(request,action):
         proactive  = data.get("proactve_content")
         self_pres  = data.get("self_content")
 
-    #///////////////
+    #////////////
 
     #Traditional Leader
     if "trad_leader" in request.POST:
