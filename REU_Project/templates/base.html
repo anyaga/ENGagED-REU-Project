@@ -12,7 +12,7 @@
 
         <div id="page_header">
             <div class="side-panel" style="width: {{ panel_size }};">
-                <form id="close_sidepanel">
+                <form id="close_sidepanel" method="POST">
                     {% csrf_token %}
                     <button name="table_close" class="open" type="submit">*</button>                
                 </form>

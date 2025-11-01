@@ -21,9 +21,13 @@
         leadership and self-preserving leadership.
     </p>
     <div class = "collapsible">
-        <button type="button" class="collapsible_button">
-            Traditional Leader
-        </button>
+        <form method="POST">
+            {% csrf_token %}
+            <button name="trad_leader" type="button" class="collapsible_button">
+                Traditional Leader
+            </button>
+        </form>
+
         <div class="collapsible_content">
             <p>
             Traditional leaders are often what come to mind when you think 
@@ -72,9 +76,12 @@
         </p>
         </div>
 
-        <button type="button" class="collapsible_button">
-            Proactive Non-traditional Leader
-        </button>
+        <form method="POST">
+            {% csrf_token %}
+            <button name="pro_leader" type="button" class="collapsible_button">
+               Proactive Non-traditional Leader
+            </button>
+        </form>
         <div class="collapsible_content">
             <p>
                 Proactive non-traditional leaders are driven by their need 
@@ -128,10 +135,12 @@
                 team toward their goals.
             </p>
     </div>
-
-    <button type="button" class="collapsible_button">
-        Self-preserving Non-traditional Leader
-    </button>
+        <form method="POST">
+            {% csrf_token %}
+            <button name="self_leader" type="button" class="collapsible_button">
+                Self-preserving Non-traditional Leader
+            </button>
+        </form>
         <div class="collapsible_content">
             <p>             
             Self-preserving non-traditional leaders are defined by their 
