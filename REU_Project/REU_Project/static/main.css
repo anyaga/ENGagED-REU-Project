@@ -85,6 +85,10 @@ h3{
   text-align: center;
 }
 
+.quote{
+  margin: 3em;
+}
+
 
 
 .page_title{
@@ -206,7 +210,7 @@ center {
   text-align: center; 
   outline: none; 
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  transition: backgroudnd 0.2s;
+  transition: 0.4s;
 
 }
 
@@ -228,20 +232,15 @@ center {
 }
 
 .collapsible_content {    
-  padding: 0 18px; /**/
+  padding: 0 4em; /**/
   display: none;
   overflow: auto;
   background-color: rgb(170, 166, 166);
+  transition: max-height 0.2s ease-out; /**look over sum**/
   /*margin-left: 10px;
   margin-right: 10px;*/
 }
 
-/*
-.active, .collapsible_button:hover + .collapsible_content
-{
-  display: block;
-}
-*/
 /*--------------Modal-----------------------------------*/
 .button{
   padding: 1em 2em;
