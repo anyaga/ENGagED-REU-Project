@@ -39,9 +39,17 @@ def find(request):
     if request.method == "POST":
         print("here!!!")
         try:
-            data = json.loads(request.body.decode("utf-8"))
-        except json.JSONDecodeError:
-            return JsonResponse({"error": "Invalid JSON"}, status=400)
+            data = json.loads(request.body)
+        except json.JSONDecodeError as e:
+            #return JsonResponse({"error": "Invalid JSON"}, status=400)
+            error_info = {
+                "error": "Invalid JSON format",
+                "message": str(e),
+                "position": f"Line {e.lineno}, Column {e.colno}",
+                "raw_body_snippet": request.body[:200].decode("utf-8", errors="replace"),  # show snippet of invalid body
+            }
+            print("JSON decode error:", error_info)
+            return JsonResponse(error_info, status=400)
 
         traditonal = data.get("trad_content")
         proactive  = data.get("proactive_content")
