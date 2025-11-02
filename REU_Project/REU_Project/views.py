@@ -4,7 +4,7 @@ from django.shortcuts import render
 import json
 
 
-def helper_side_panel(request,action):
+def helper_side_panel(request):
     display_value = "none"
     panel_size = "0em"
     if "about-open" in request.POST:
@@ -17,20 +17,19 @@ def helper_side_panel(request,action):
         panel_size = "0em"
     context = {
         "display_value":display_value,
-        "action": action,
         "panel_size":panel_size,
     }
     return context
 
-def home(request,action="close"):
-    context = helper_side_panel(request,action)
+def home(request):
+    context = helper_side_panel(request)
     return render(request, "index.html",context)
 
-def abstract(request,action):
-    context = helper_side_panel(request,action)
+def abstract(request):
+    context = helper_side_panel(request)
     return render(request,"abstract.html",context)
 
-def find(request,action):
+def find(request):
     #Automatically close the accordian tabs
     trad = "none"
     pro  = "none"
@@ -39,7 +38,10 @@ def find(request,action):
     #If some action is taken
     if request.method == "POST":
         print("here!!!")
-        data = json.loads(request.body)
+        try:
+            data = json.loads(request.body.decode("utf-8"))
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
 
         traditonal = data.get("trad_content")
         proactive  = data.get("proactive_content")
@@ -84,20 +86,20 @@ def find(request,action):
     if "self_leader" in request.POST:
         self = "block"
     '''
-    context = helper_side_panel(request,action)
+    context = helper_side_panel(request)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
     context['self_leader'] = self
     return render(request,"find.html",context)
 
-def reference(request,action):
-    context = helper_side_panel(request,action)
+def reference(request):
+    context = helper_side_panel(request)
     return render(request,"ref.html",context)
 
-def doc_preview(request,action):
-    context = helper_side_panel(request,action)
+def doc_preview(request):
+    context = helper_side_panel(request)
     return render(request,"doc_preview.html",context)
 
-def participants(request,action):
-    context = helper_side_panel(request,action)
+def participants(request):
+    context = helper_side_panel(request)
     return render(request,"participants.html",context)
