@@ -37,7 +37,6 @@ def find(request):
 
     #If some action is taken
     if request.method == "POST":
-        print("here!!!")
         try:
             data = json.loads(request.body)
         except json.JSONDecodeError as e:
