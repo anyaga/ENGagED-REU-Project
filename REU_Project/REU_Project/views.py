@@ -81,18 +81,7 @@ def find(request):
     #////////////
 
     #Traditional Leader
-    '''
-    if "trad_leader" in request.POST:
-        trad = "block"
 
-    #Proactice Non-tradition leader
-    if "pro_leader"  in request.POST:
-        pro = "block"
-        
-    #Self-preserving non-traditional leader
-    if "self_leader" in request.POST:
-        self = "block"
-    '''
     context = helper_side_panel(request)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
