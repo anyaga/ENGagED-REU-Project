@@ -12,7 +12,7 @@ def helper_side_panel(request):
     if "about-close" in request.POST:
         display_value = "none"
     if 'table_of_contents' in request.POST:
-        panel_size = "20em"
+        panel_size = "15em"
     if 'table_close' in request.POST:
         panel_size = "0em"
     context = {
