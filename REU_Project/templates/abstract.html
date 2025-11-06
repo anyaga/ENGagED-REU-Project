@@ -11,13 +11,12 @@
         <h1> PDF Viewer</h1>   
         
         <div id="pdf_control">
-            <button id="load_pdf">Load PDF</button>
             <button id="download_pdf">Download PDF</button>
         </div>
         <div id="pdf_viewer">
             <object 
                 id="viewer"
-                data=""
+                data="{% static Nyaga_Engaged_REU_Abstract.pdf %}"
                 aria-label="PDF Viewer"
                 type="application/pdf">
                 <p>No support PDF. 

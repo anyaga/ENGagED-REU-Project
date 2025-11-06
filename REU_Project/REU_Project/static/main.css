@@ -122,10 +122,14 @@ h3{
 }
 
 
-#pdf_viewer{
+#pdf_viewer object{
   width: 100%;
-  height: 500px;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
+
 
 
 
