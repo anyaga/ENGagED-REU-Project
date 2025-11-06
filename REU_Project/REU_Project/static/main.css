@@ -104,7 +104,10 @@ h3{
   margin-right: 7em;
 }
 
-
+.pdf_viewer{
+  width: 100%;
+  height: 500px;
+}
 
 
 
