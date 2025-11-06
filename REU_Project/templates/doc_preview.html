@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
- 
+{% load static %} 
+
 {% block title %} Annotated Bibliography {% endblock %}
 
 {% block content %}
 
-    <li><a href="https://docs.google.com/document/d/1uofUSbTUjShCiip40HaYByJ6tHmj33i5rJ2CKJ59AOg/edit?usp=sharing" 
-        onclick="toggleFunction()">ANNOTATED BIBLIOGRAPHY
-    </a></li>
+    <div id="bckg_annotate">
+        <p>
+            Blurb describing annotated Bibliography......add to this!!!!!
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="full_pdf_viewer" >
+        <div id="pdf_viewer">
+            <object 
+                id="viewer"
+                type="application/pdf"
+                data="{% static 'NyagaEngageREUAnnotatedBiblography.pdf' %}"
+                width="100" height="600">
+                <p>No support PDF. 
+                    <a href="#" id="altDownload">Download</a>
+                </p>
+            </object>            
+        </div>
+    </div>
 {% endblock %}
 
