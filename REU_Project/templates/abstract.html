@@ -7,12 +7,26 @@
     <li><a href="https://docs.google.com/document/d/1g--onY2df96FPF8n-pfPkc2HSLYk_iS7c2_j8cFPCXI/edit?usp=sharing" 
         onclick="toggleFunction()">ABSTRACT
     </a></li>
-    <object class="pdf_viewer" data="{% static Nyaga_Engage_REU_Abstract.pdf %}" type="application/pdf">
-    </object>
-
-    <h1> PDF Viewer</h1>
-    <div class="viewer">
+    <div id="full_pdf_viewer" >
+        <h1> PDF Viewer</h1>   
         
+        <div id="pdf_control">
+            <button id="load_pdf">Load PDF</button>
+            <button id="download_pdf">Download PDF</button>
+        </div>
+        <div id="pdf_viewer">
+            <object 
+                id="viewer"
+                data=""
+                aria-label="PDF Viewer"
+                type="application/pdf">
+                <p>No support PDF. 
+                    <a href="#" id="altDownload">Download</a>
+                </p>
+            </object>            
+        </div>
     </div>
+
+
 {% endblock %}
 
