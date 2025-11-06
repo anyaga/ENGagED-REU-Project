@@ -10,7 +10,7 @@ This originally was a static website built primarly from html and css. This repo
 
 ## Important Commnds
 activate environmet
-source .venv/bin/active
+source .venv/bin/activate
 
 deacivate envionment
 deactivate 
