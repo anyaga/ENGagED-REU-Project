@@ -246,8 +246,6 @@ center {
   overflow: auto;
   background-color: rgb(170, 166, 166);
   transition: max-height 0.2s ease-out; /**look over sum**/
-  /*margin-left: 10px;
-  margin-right: 10px;*/
 }
 
 /*--------------Modal-----------------------------------*/
