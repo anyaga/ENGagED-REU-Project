@@ -131,13 +131,11 @@ center {
 /**Abstract**/
 
 #full_pdf_viewer{
-  background:#fff;
-  padding:20px;
+  background:#7f7f7f;
+  padding:50px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   width: 80%;
-  max-width: 800px;
-  align-items: center;
 }
 
 #pdf_control{
