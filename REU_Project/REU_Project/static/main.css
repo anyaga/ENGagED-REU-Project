@@ -9,7 +9,7 @@ body, html {
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 h2 {
@@ -18,7 +18,7 @@ h2 {
   text-align: center;
 }
 
-h3{
+h3 {
   color:gray;
   font-size: 18px;
   text-align: center;
@@ -47,32 +47,31 @@ center {
   font-size: 60px;
 }
 
-
-.main{
+.main {
   margin-left: 7em;
   margin-right: 7em;
 }
 
 /** Header (in base file) **/
-#page_header{
+#page_header {
   background: #333;
   color: white;
 }
 
-#title_block{
+#title_block {
   padding: 30px;
   text-align: center;
   text-decoration: none;
 }
 
-#link_title{
+#link_title {
   color:white;
   font-size: 2.4em;
   text-align: center;
   text-decoration: none;
 }
 
-#link_title:hover{
+#link_title:hover {
   color: #5a5858;
 }
   
@@ -94,27 +93,26 @@ center {
 
 .nav-bar-values a:hover {background-color: #111;}
 
-#id-about-open{
+#id-about-open {
   border: none;
   background-color: transparent;
   color:white;
   font-size:15px;
 }
 
-#id-about-close{
+#id-about-close {
   border: none;
   background-color: transparent;
   text-align: right;
 }
 
-.page_title{
+.page_title {
   color:#000;
   font-size: 2em;
   text-align: center;
   padding: 2em;
   font-weight: bold;
 }
-
 
 /**I DONT KNOW. NEED TO LOOK OVER**/
 
@@ -124,13 +122,13 @@ center {
 
 /**FINDINGS**/
 
-.quote{
+.quote {
   margin: 3em;
 }
 
 /**Abstract**/
 
-#full_pdf_viewer{
+#full_pdf_viewer {
   background:#7f7f7f;
   padding:50px;
   border-radius: 8px;
@@ -138,13 +136,13 @@ center {
   width: 80%;
 }
 
-#pdf_control{
+#pdf_control {
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
 }
 
-#pdf_viewer object{
+#pdf_viewer object {
   width: 100%;
   height: 80vh;
   border: 1px solid #ccc;
@@ -153,7 +151,7 @@ center {
 }
 
 /**Side Panel**/
-.side-panel{
+.side-panel {
   height: 100vh;
   position: fixed;
   z-index: 1;
@@ -223,7 +221,7 @@ center {
 
 }
 
-.collapsible_button:after{
+.collapsible_button:after {
   content: '\002B';
   color: black;
   font-weight: bold;
@@ -231,7 +229,7 @@ center {
   margin-left: 5px;
 }
 
-.collapsible_button.after:after{
+.collapsible_button.after:after {
   content: "\2212";
 }
 
@@ -241,20 +239,20 @@ center {
 }
 
 .collapsible_content {    
-  padding: 0 4em; /**/
+  padding: 0 4em; 
   display: none;
   overflow: auto;
   background-color: rgb(170, 166, 166);
-  transition: max-height 0.2s ease-out; /**look over sum**/
+  transition: max-height 0.2s ease-out; 
 }
 
 /*--------------Modal-----------------------------------*/
-.button{
+.button {
   padding: 1em 2em;
   border:0;
 }
 
-.button:hover{
+.button:hover {
   background:rgb(56, 54, 54)
 }
 
