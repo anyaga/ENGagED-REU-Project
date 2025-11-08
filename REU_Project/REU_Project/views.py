@@ -98,4 +98,11 @@ def doc_preview(request):
 
 def participants(request):
     context = helper_side_panel(request)
+    profile_open = "none"
+    if "participants-name" in request.POST:
+        profile_open = "block" #check this
+        print("NONE")
+    if "about-close" in request.POST:
+        profile_open = "none"
+    context["profile_open"] = profile_open
     return render(request,"participants.html",context)

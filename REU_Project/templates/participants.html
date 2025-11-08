@@ -32,7 +32,13 @@
             <th id="header_col_5" class="header_col">Leadership Archetype</th>
         </tr>
         <tr>
-            <td class="col_1">Killua</td>
+            <td class="col_1">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="participants-name">Killua</button>
+                </form>
+                
+            </td>
             <td class="col_2">Black Male</td>
             <td class="col_3">Graduate School</td>
             <td class="col_4">Mechanical</td>
@@ -69,6 +75,14 @@
         </tr>
     </table>
 
+    <div class="profile-modal-content" style="display:{{ profile_open }} ;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <button id="id-about-close" type="submit" name="about-close">X</button>                                
+        </form>
+        <div id="participant-pic"></div>
+        <div id="participant-job"></div>
 
+    </div>
 {% endblock %}
 
