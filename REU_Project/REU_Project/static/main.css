@@ -294,3 +294,10 @@ center {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+/**Participants**/
+
+table, th, td {
+  border: 1px solid black;
+}
