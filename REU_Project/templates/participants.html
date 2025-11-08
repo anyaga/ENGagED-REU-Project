@@ -3,6 +3,29 @@
 {% block title %}  Research Participants {% endblock %}
  
 {% block content %}    
+    <div class="profile-modal"  style="display:{{ profile_open }} ;">
+        <div class="profile-modal-content">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button id="id-about-close" type="submit" name="about-close">X</button>                                
+            </form>
+            <table>
+                <tr>
+                    <div id="participant-pic">check</div>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Job</td>
+                </tr>
+                <tr>
+                    <td> Discipline</td>
+                    <td>Archetype</td>
+                </tr>
+            </table>
+
+            <div id="participant-job"></div>
+        </div>
+    </div>
 
     <!--img src="{% static 'img/part_graph.png' %}" alt="particapants graph"
     style="float:right;width:450px; padding:2em;"-->
@@ -22,7 +45,7 @@
         engineering discipline.
     </p>
 
-    <table>
+    <table class="participants">
         <tr id="row_header">
             <!--If i hover on any of these, highlieght corresponding row-->
             <th id="header_col_1" class="header_col">Participants</th>
@@ -75,14 +98,5 @@
         </tr>
     </table>
 
-    <div class="profile-modal-content" style="display:{{ profile_open }} ;">
-        <form action="" method="POST">
-            {% csrf_token %}
-            <button id="id-about-close" type="submit" name="about-close">X</button>                                
-        </form>
-        <div id="participant-pic"></div>
-        <div id="participant-job"></div>
-
-    </div>
 {% endblock %}
 

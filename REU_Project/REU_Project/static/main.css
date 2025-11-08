@@ -298,16 +298,16 @@ center {
 
 /**Participants**/
 
-table {
+.participants {
   border: 3px solid black;
   border-spacing: 0px;
 }
 
-th {
+tr #row_header {
   padding: 0.4em;
 }
 
-td {
+tr .col_1, .col_2, .col_3, .col_4, .col_5 {
   border:1px solid #b8b7b7;
   padding:0.3em;
 }
@@ -345,6 +345,17 @@ body:has(#header_col_5:hover)  .col_5{
   border:0px;
 }
 
+.profile-modal {
+  position: fixed;              
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
 
 /* Modal Content */
 .profile-modal-content {
