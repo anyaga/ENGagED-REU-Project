@@ -301,3 +301,32 @@ center {
 table, th, td {
   border: 1px solid black;
 }
+
+#row_header{
+  background-color:#7f7f7f;
+}
+
+.header_col:hover{
+  background-color: #444;
+}
+
+body:has(#header_col_1:hover)  .col_1{
+  background-color: #7f7f7f;
+}
+
+body:has(#header_col_2:hover)  .col_2{
+  background-color: #7f7f7f;
+}
+
+body:has(#header_col_3:hover)  .col_3{
+  background-color:#7f7f7f;
+}
+
+body:has(#header_col_4:hover)  .col_4{
+  background-color: #7f7f7f;
+}
+
+body:has(#header_col_5:hover)  .col_5{
+  background-color: #7f7f7f;
+}
+
