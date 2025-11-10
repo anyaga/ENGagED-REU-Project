@@ -154,16 +154,30 @@ def participants(request):
     profession = None
     discipline = None
     archetype  = None
-    if "killua-profile" in request.POST:
+    
+    if "Killua" in request.POST:
         profile = Profile.objects.get(name="Killua")
+
+    if "Dad" in request.POST:
+        profile = Profile.objects.get(name="Dad")
+
+    if "Jae" in request.POST:
+        profile = Profile.objects.get(name="Jae")
+
+    if "Gabrielle" in request.POST:
+        profile = Profile.objects.get(name="Gabrielle")
+
+    if "Jesica" in request.POST:
+        profile = Profile.object.get(name="Jesica")
+
+    if profile is not None:
         name      = profile.name
         identity  = profile.identity
         profession = profile.professional_position
         discipline = profile.discipline
-        archetype  = profile.archetype
-
+        archetype  = profile.archetype   
         profile_open = "block" #check this
-        print("NONE")
+        print("NONE")     
 
     if "about-close" in request.POST:
         profile_open = "none"
