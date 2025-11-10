@@ -14,12 +14,12 @@
                     <div id="participant-pic">check</div>
                 </tr>
                 <tr>
-                    <td>Name:</td>
-                    <td>Job:</td>
+                    <td>Name: {{ name }}</td>
+                    <td>Job: {{ profession }}</td>
                 </tr>
                 <tr>
-                    <td> Discipline:</td>
-                    <td>Archetype:</td>
+                    <td> Discipline: {{ discipline }}</td>
+                    <td>Archetype: {{ archetype }}</td>
                 </tr>
             </table>
 
@@ -58,7 +58,7 @@
             <td class="col_1">
                 <form action="" method="POST">
                     {% csrf_token %}
-                    <button type="submit" name="participants-name">Killua</button>
+                    <button type="submit" name="killua-profile">Killua</button>
                 </form>
                 
             </td>
