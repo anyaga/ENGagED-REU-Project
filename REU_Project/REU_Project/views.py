@@ -48,7 +48,7 @@ def find(request):
             }
             print("JSON decode error:", error_info)
             return JsonResponse(error_info, status=400)
-
+        print("i made it!!!")
         traditonal = data.get("trad_content")
         proactive  = data.get("proactive_content")
         self_pres  = data.get("self_content")

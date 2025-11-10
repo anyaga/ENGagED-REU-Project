@@ -21,9 +21,10 @@
         leadership and self-preserving leadership.
     </p>
     <div class = "collapsible">
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
-            <button class="collapsible_button" name="trad_leader" type="submit" >
+            <button class="collapsible_button" type="submit" >
+            <!--button class="collapsible_button" name="trad_leader" type="submit" -->
                 Traditional Leader
             </button>
         </form>
@@ -78,7 +79,7 @@
             </p>
         </div>
 
-        <form method="POST">
+        <form method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
             <button class="collapsible_button" name="pro_leader" type="submit" >
                Proactive Non-traditional Leader
@@ -140,7 +141,7 @@
                 team toward their goals.
             </p>
         </div>
-        <form method="POST">
+        <form method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
             <button class="collapsible_button" name="self_leader" type="submit" >
                 Self-preserving Non-traditional Leader
@@ -185,9 +186,10 @@
         </div>
     </div>
     <script>
-        const csrftoken = '{{ csrf_token }}';  // Must be in template
-
         function accButtonDisplayToViews(){
+            // stop form from reloading the page
+            event.preventDefault();
+
             //Send accordian button display values to views.py
             const acc_content_sections = ['trad_content',
                                           'proactive_content',
@@ -206,7 +208,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken' : csrftoken
+                    'X-CSRFToken' : '{{ csrf_token }}'
                 },
                 body: JSON.stringify(display_vals)
             }).then(response => response.json())
