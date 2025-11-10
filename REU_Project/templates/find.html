@@ -185,8 +185,10 @@
         </div>
     </div>
     <script>
+        const csrftoken = '{{ csrf_token }}';  // Must be in template
+
         function accButtonDisplayToViews(){
-            //Send accordian button display values to views.y
+            //Send accordian button display values to views.py
             const acc_content_sections = ['trad_content',
                                           'proactive_content',
                                           'self_content']
@@ -204,7 +206,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken' : '{{ csrf_token }}'
+                    'X-CSRFToken' : csrftoken
                 },
                 body: JSON.stringify(display_vals)
             }).then(response => response.json())

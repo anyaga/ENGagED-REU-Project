@@ -4,7 +4,6 @@ from .models          import Profile
 
 import json
 
-
 def helper_side_panel(request):
     display_value = "none"
     panel_size = "0em"
@@ -41,7 +40,6 @@ def find(request):
         try:
             data = json.loads(request.body)
         except json.JSONDecodeError as e:
-            #return JsonResponse({"error": "Invalid JSON"}, status=400)
             error_info = {
                 "error": "Invalid JSON format",
                 "message": str(e),
@@ -78,12 +76,15 @@ def find(request):
                 self = "none"
             trad = traditonal
             pro = proactive
-
     context = helper_side_panel(request)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
     context['self_leader'] = self
     return render(request,"find.html",context)
+
+
+
+
 
 def reference(request):
     context = helper_side_panel(request)
@@ -132,14 +133,10 @@ def create_participants(request):
         person5.save()
     return HttpResponse("People created succesfully")
 
-
-
-
 def participants(request):
     create_participants(request)
     context = helper_side_panel(request)
     profile_open = "none"
-
     profile    = None
     name       = None
     identity   = None
