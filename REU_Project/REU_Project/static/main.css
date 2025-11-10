@@ -204,10 +204,8 @@ center {
 
 /*--------------Collapsible-------*/
 .collapsible_button {
-
   font-size: 21px;
   font-weight: bold;
-
   padding:30px;
   display: block;
   background-color: rgb(92, 90, 87);
@@ -401,4 +399,9 @@ body:has(#header_col_5:hover)  .col_5{
   line-height: 1.5;
   text-align: center;
   text-indent: 0px;
+}
+
+
+.col_1:hover {
+  background-color: #bdbaba;
 }
