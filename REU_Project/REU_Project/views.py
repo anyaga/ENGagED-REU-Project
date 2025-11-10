@@ -1,5 +1,6 @@
 from django.http      import HttpResponse, JsonResponse
 from django.shortcuts import render
+from .models          import Profile
 
 import json
 
@@ -96,9 +97,54 @@ def doc_preview(request):
     context = helper_side_panel(request)
     return render(request,"doc_preview.html",context)
 
+def create_participants(request):
+    person1 = Profile(name="Killua",
+                    identity="Black Male",
+                    professional_position="Graduate School",
+                    discipline="Mechanical",
+                    archetype="Proactive")
+    person1.save()
+
+    person2 = Profile(name="Dad",
+                    identity="Black/Hispanic Male",
+                    professional_position="Young Professional",
+                    discipline="Mechanical",
+                    archetype="Proactive")  
+    person2.save()
+
+    person3 = Profile(name="Jae",
+                    identity="Black Female",
+                    professional_position="Young Professional",
+                    discipline="Civil",
+                    archetype="Self-Preserving")
+    person3.save()
+
+    person4 = Profile(name="Gabrielle",
+                    identity="Black Female",
+                    professional_position="Young Professional",
+                    discipline="Chemical",
+                    archetype="Traditional")
+    person4.save()
+
+    person5 = Profile(name="Jesica",
+                    identity="Black Femme Presenting",
+                    professional_position="Young Professional",
+                    discipline="Industrial",
+                    archetype="Traditional")
+    person5.save()
+
+
+
+
 def participants(request):
+    create_participants(request)
+    profs = Profile.objects.all()
+    
     context = helper_side_panel(request)
     profile_open = "none"
+
+    profs = Profile.objects.all()
+
     if "participants-name" in request.POST:
         profile_open = "block" #check this
         print("NONE")
