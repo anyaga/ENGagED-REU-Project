@@ -79,10 +79,6 @@ def find(request):
             trad = traditonal
             pro = proactive
 
-    #////////////
-
-    #Traditional Leader
-
     context = helper_side_panel(request)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
@@ -98,7 +94,6 @@ def doc_preview(request):
     return render(request,"doc_preview.html",context)
 
 def create_participants(request):
-
     if not Profile.objects.filter(name="Killua").exists():
         person1 = Profile(name="Killua",
                         identity="Black Male",
@@ -142,12 +137,9 @@ def create_participants(request):
 
 def participants(request):
     create_participants(request)
-    profs = Profile.objects.all()
-    
     context = helper_side_panel(request)
     profile_open = "none"
 
-    profs = Profile.objects.all()
     profile    = None
     name       = None
     identity   = None
@@ -180,6 +172,7 @@ def participants(request):
 
     if "about-close" in request.POST:
         profile_open = "none"
+
     context["profile_open"] = profile_open
     context["name"]       = name
     context["identity"]   = identity
