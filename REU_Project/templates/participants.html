@@ -27,8 +27,6 @@
         </div>
     </div>
 
-    <!--img src="{% static 'img/part_graph.png' %}" alt="particapants graph"
-    style="float:right;width:450px; padding:2em;"-->
     <p>
         This study focuses on the stories of five Black and/or Latinx 
         engineering students and young professionals. Their stories 
@@ -47,7 +45,6 @@
 
     <table class="participants" align="center">
         <tr id="row_header">
-            <!--If i hover on any of these, highlieght corresponding row-->
             <th id="header_col_1" class="header_col">Participants</th>
             <th id="header_col_2" class="header_col">Racial & Gender Identify</th>
             <th id="header_col_3" class="header_col">Professional Position</th>
@@ -60,7 +57,6 @@
                     {% csrf_token %}
                     <button class="profile_button" type="submit" name="Killua">Killua</button>
                 </form>
-                
             </td>
             <td class="col_2"><p class="table_text">Black Male</p></td>
             <td class="col_3"><p class="table_text">Graduate School</p></td>
@@ -114,9 +110,7 @@
             <td class="col_4"><p class="table_text">Industrial</p></td>
             <td class="col_5"><p class="table_text">Traditional</p></td>
         <tr>
-
         </tr>
     </table>
-
 {% endblock %}
 
