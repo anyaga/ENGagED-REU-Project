@@ -10,4 +10,6 @@ class Profile(models.Model):
     archetype = models.CharField(max_length=20)
 
     def __str__(self):
-        return f" name={self.name}\n identity={self.identity}\n prof={self.professional_position}"
+        sub1 = f"name={self.name}\n identity={self.identity}\n prof={self.professional_position}"
+        sub2 = f"discipline={self.discipline}\narchetype={self.archetype}\n\n"
+        return sub1 + sub2
