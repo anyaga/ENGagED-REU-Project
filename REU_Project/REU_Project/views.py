@@ -168,7 +168,7 @@ def participants(request):
         profile = Profile.objects.get(name="Gabrielle")
 
     if "Jesica" in request.POST:
-        profile = Profile.object.get(name="Jesica")
+        profile = Profile.objects.get(name="Jesica")
 
     if profile is not None:
         name      = profile.name
@@ -176,8 +176,7 @@ def participants(request):
         profession = profile.professional_position
         discipline = profile.discipline
         archetype  = profile.archetype   
-        profile_open = "block" #check this
-        print("NONE")     
+        profile_open = "block" #check this  
 
     if "about-close" in request.POST:
         profile_open = "none"

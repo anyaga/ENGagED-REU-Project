@@ -33,6 +33,7 @@ p {
   text-indent: 50px;
 }
 
+
 b {
   text-indent: -2em;
   margin-left: 20px;
@@ -303,10 +304,6 @@ center {
   border-spacing: 0px;
 }
 
-tr #row_header {
-  padding: 0.4em;
-}
-
 tr .col_1, .col_2, .col_3, .col_4, .col_5 {
   border:1px solid #b8b7b7;
   padding:0.3em;
@@ -314,6 +311,11 @@ tr .col_1, .col_2, .col_3, .col_4, .col_5 {
 
 #row_header{
   background-color:#7f7f7f;
+  padding: 0.4em;
+}
+
+.header_col {
+  padding: 1em;
 }
 
 .header_col:hover{
@@ -379,4 +381,24 @@ body:has(#header_col_5:hover)  .col_5{
   width: 25em;
   border: 1px solid black;
   margin:auto;
+}
+
+.profile_button{
+  font-family: Calibri;
+  color: black;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+  border: none;
+  background: none;
+}
+
+
+.table_text{
+  font-family: Calibri;
+  color: black;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+  text-indent: 0px;
 }
