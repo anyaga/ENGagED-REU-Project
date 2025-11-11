@@ -24,7 +24,6 @@
         <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
             <button class="collapsible_button" name="trad_leader" type="submit" >
-            <!--button class="collapsible_button" name="trad_leader" type="submit" -->
                 Traditional Leader
             </button>
         </form>
@@ -79,7 +78,7 @@
             </p>
         </div>
 
-        <form method="POST" onsubmit="accButtonDisplayToViews(event)">
+        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
             <button class="collapsible_button" name="pro_leader" type="submit" >
                Proactive Non-traditional Leader
@@ -141,7 +140,8 @@
                 team toward their goals.
             </p>
         </div>
-        <form method="POST" onsubmit="accButtonDisplayToViews(event)">
+
+        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
             <button class="collapsible_button" name="self_leader" type="submit" >
                 Self-preserving Non-traditional Leader

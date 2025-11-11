@@ -34,9 +34,10 @@ def find(request):
     trad = "none"
     pro  = "none"
     self = "none"
-
+    print(request.POST)
+    print("\n\n")
     #If some action is taken
-    if request.method == "POST":
+    if request.method == "POST" and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
         try:
             data = json.loads(request.body)
         except json.JSONDecodeError as e:
@@ -53,6 +54,9 @@ def find(request):
         proactive  = data.get("proactive_content")
         self_pres  = data.get("self_content")
         print(request.POST)
+        print(traditonal)
+        print(proactive)
+        print(self_pres)
 
         if "trad_leader" in request.POST:
             print("checking!")
