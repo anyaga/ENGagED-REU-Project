@@ -52,8 +52,10 @@ def find(request):
         traditonal = data.get("trad_content")
         proactive  = data.get("proactive_content")
         self_pres  = data.get("self_content")
+        print(request.POST)
 
         if "trad_leader" in request.POST:
+            print("checking!")
             if traditonal == "none":
                 trad = "block"
             else:
@@ -80,6 +82,7 @@ def find(request):
     context['trad_leader'] = trad
     context['pro_leader']  = pro
     context['self_leader'] = self
+    print(context)
     return render(request,"find.html",context)
 
 
