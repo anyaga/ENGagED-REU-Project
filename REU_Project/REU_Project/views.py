@@ -34,7 +34,7 @@ def find(request):
     trad = "none"
     pro  = "none"
     self = "none"
-    
+
     print("\n\n")    
     print(request.POST)
 
@@ -147,6 +147,7 @@ def participants(request):
     context = helper_side_panel(request)
     profile_open = "none"
     profile    = None
+    image      = None
     name       = None
     identity   = None
     profession = None
@@ -180,6 +181,7 @@ def participants(request):
         profile_open = "none"
 
     context["profile_open"] = profile_open
+    context['image']      = image
     context["name"]       = name
     context["identity"]   = identity
     context["profession"] = profession
