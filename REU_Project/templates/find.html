@@ -190,15 +190,12 @@
     </div>
     <script>
         function accButtonDisplayToViews(){
-            // stop form from reloading the page
             event.preventDefault();
 
             //Send accordian button display values to views.py
             const acc_content_sections = ['trad_content',
                                           'proactive_content',
                                           'self_content']
-
-            //Collect all the display values of the accoridan content
             display_vals = {};
             acc_content_sections.forEach(content_id => {
                 var element = document.getElementById(content_id);
@@ -207,7 +204,7 @@
             });
 
             //Send to django
-            fetch('/findings/', { //some errror with the fetch!!!!
+            fetch('/findings/', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

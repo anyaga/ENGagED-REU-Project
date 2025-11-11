@@ -11,7 +11,9 @@
             </form>
             <table id="profile_details">
                 <tr>
-                    <div id="participant-pic">check</div>
+                    <div id="participant-pic">
+                        INSERT IMAGE HERE
+                    </div>
                 </tr>
                 <tr>
                     <td style="padding:0.4em;"><b>Name: </b>{{ name }}</td>
@@ -101,6 +103,7 @@
             <td class="col_4"><p class="table_text">Chemical</p></td>
             <td class="col_5"><p class="table_text">Traditional</p></td>
         </tr>
+        <tr>
             <td class="col_1"> 
                 <form action="" method="POST">
                     {% csrf_token %}
@@ -111,7 +114,6 @@
             <td class="col_3"><p class="table_text">Young Professional</p></td>
             <td class="col_4"><p class="table_text">Industrial</p></td>
             <td class="col_5"><p class="table_text">Traditional</p></td>
-        <tr>
         </tr>
     </table>
 {% endblock %}
