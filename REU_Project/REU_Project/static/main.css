@@ -101,6 +101,13 @@ center {
   font-size:15px;
 }
 
+#id-profile-open {
+  border: none;
+  background-color: transparent;
+  color:white;
+  font-size:15px;
+}
+
 #id-about-close {
   border: none;
   background-color: transparent;

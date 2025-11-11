@@ -6,6 +6,7 @@ import json
 
 def helper_side_panel(request):
     display_value = "none"
+    profile_value = "none"
     panel_size = "0em"
     if "about-open" in request.POST:
         display_value = "block"
@@ -15,8 +16,11 @@ def helper_side_panel(request):
         panel_size = "15em"
     if 'table_close' in request.POST:
         panel_size = "0em"
+    if "profile-open" in request.POST:
+        profile_value = "block"
     context = {
         "display_value":display_value,
+        "profile_value":profile_value,
         "panel_size":panel_size,
     }
     return context

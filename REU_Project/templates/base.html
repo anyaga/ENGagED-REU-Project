@@ -88,8 +88,29 @@
                         <a href="https://coleyspacelab.com/" onclick="toggleFunction()">SPACE LAB</a>
                     </li>
                     <li class="nav-bar-values">
-                        <a href="">PROFILE</a>
+                        <a>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <button id="id-profile-open" type="submit"name="profile-open">PROFILE</button>
+                            </form>
+                            <div id="simModal" class="modal" style="display: {{ profile_value }};">
+                                <div class="modal-content">
+                                    <div>
+                                        <form action="" method="POST">
+                                            {% csrf_token %}
+                                            <button id="id-profile-close" class="closeBtn" type="submit" name="profile-close">X</button>
+                                        </form>
+                                    </div>
+                                    <div><p>Angel Nyaga</p></div>
+                                    <div id="personal_profile_pic"></div>
+                                    <div id="personal_bio"></div>
+                                    <div id="personal_edu_list"></div>
+                                </div>                        
+                            </div>
+                        </a>
                     </li>
+
+
                 </ul> 
             </table>
         </div>
