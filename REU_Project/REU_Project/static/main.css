@@ -369,14 +369,14 @@ body:has(#header_col_5:hover)  .col_5{
 }
 
 #participant-pic{
-  width: 25em;
+  width: 28em;
   height: 30em;
   background-color: plum;
   margin: auto;
 }
 
 #profile_details {
-  width: 25em;
+  width: 28em;
   border: 1px solid black;
   margin:auto;
 }
