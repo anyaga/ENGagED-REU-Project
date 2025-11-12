@@ -39,11 +39,8 @@ def find(request):
     pro  = "none"
     self = "none"
 
-    print("\n\n")    
-    print(request.POST)
-
     #If some action is taken
-    if request.method == "POST" and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
+    if request.method == "POST" and "profile-open" not in request.POST and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
         try:
             data = json.loads(request.body)
         except json.JSONDecodeError as e:
