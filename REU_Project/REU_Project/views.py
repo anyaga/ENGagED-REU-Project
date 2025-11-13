@@ -1,6 +1,8 @@
-from django.http      import HttpResponse, JsonResponse
-from django.shortcuts import render
-from .models          import Profile
+from django.http       import HttpResponse, JsonResponse
+from django.core.files import File
+from django.conf       import settings
+from django.shortcuts  import render
+from .models           import Profile
 
 import json
 
@@ -155,23 +157,30 @@ def participants(request):
     discipline = None
     archetype  = None
     
+
     if "Killua" in request.POST:
         profile = Profile.objects.get(name="Killua")
+        profile.image.name = "img/masc1.png"
 
     if "Dad" in request.POST:
         profile = Profile.objects.get(name="Dad")
+        profile.image.name = "img/masc3.png"
 
     if "Jae" in request.POST:
         profile = Profile.objects.get(name="Jae")
+        profile.image.name = "img/masc2.png"
 
     if "Gabrielle" in request.POST:
         profile = Profile.objects.get(name="Gabrielle")
+        profile.image.name = "img/fem1.png"
 
     if "Jesica" in request.POST:
         profile = Profile.objects.get(name="Jesica")
+        profile.image.name = "img/fem2.png"
 
     if profile is not None:
         name      = profile.name
+        image     = 
         identity  = profile.identity
         profession = profile.professional_position
         discipline = profile.discipline

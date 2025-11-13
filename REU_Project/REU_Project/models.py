@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Profile(models.Model):
-    image                 = models.ImageField(upload_to='profile_images/', blank=True, null=True)
+    image                 = models.ImageField(upload_to='avatar/', blank=True, null=True)
     name                  = models.CharField(max_length=20)
     identity              = models.CharField(max_length=20)
     professional_position = models.CharField(max_length=20)
