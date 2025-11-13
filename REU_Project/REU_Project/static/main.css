@@ -414,7 +414,41 @@ body:has(#header_col_5:hover)  .col_5{
 }
 
 
-#github_icon {
+#github_img_container{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
   width: 7em;
   height: 7em;
+}
+
+#github_img_container{ 
+  transform: scale(1.02);
+}
+
+#github_icon_white {
+  width: 100%;/*7em;*/
+  height:100%; /*7em;*/
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  z-index: 2;
+}
+
+#github_icon_black {
+  width: 100%;/*7em;*/
+  height:100%; /*7em;*/
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+#github_icon_white:hover {
+  opacity: 0;
+}
+
+#github_icon_black:hover {
+  opacity: 1;
 }
