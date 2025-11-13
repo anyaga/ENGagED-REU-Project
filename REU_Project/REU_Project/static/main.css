@@ -425,11 +425,13 @@ body:has(#header_col_5:hover)  .col_5{
   height: 7em;
 }
 
-#github_img_container{ 
+#github_img_container:hover { 
   transform: scale(1.02);
 }
 
 #github_icon_white {
+  position: absolute;
+  object-fit: cover;
   width: 100%;/*7em;*/
   height:100%; /*7em;*/
   transition: opacity 0.5s ease-in-out;
@@ -438,6 +440,8 @@ body:has(#header_col_5:hover)  .col_5{
 }
 
 #github_icon_black {
+  position: absolute;
+  object-fit: cover;
   width: 100%;/*7em;*/
   height:100%; /*7em;*/
   transition: opacity 0.5s ease-in-out;
@@ -445,10 +449,10 @@ body:has(#header_col_5:hover)  .col_5{
   z-index: 1;
 }
 
-#github_icon_white:hover {
+#github_img_container:hover #github_icon_white {
   opacity: 0;
 }
 
-#github_icon_black:hover {
+#github_img_container:hover #github_icon_black {
   opacity: 1;
 }
