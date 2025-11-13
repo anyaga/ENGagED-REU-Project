@@ -165,27 +165,37 @@ def participants(request):
 
     if "Killua" in request.POST:
         profile = Profile.objects.get(name="Killua")
+        image =  "img/masc1.png"
+
 
     if "Dad" in request.POST:
         profile = Profile.objects.get(name="Dad")
+        image =  "img/masc3.png"
 
     if "Jae" in request.POST:
         profile = Profile.objects.get(name="Jae")
+        image =  "img/masc2.png"
 
     if "Gabrielle" in request.POST:
         profile = Profile.objects.get(name="Gabrielle")
+        image =  "img/fem1.png"
 
     if "Jesica" in request.POST:
         profile = Profile.objects.get(name="Jesica")
+        image =  "img/fem2.png"
 
     if profile is not None:
+        
         name      = profile.name
-        image     = profile.image.name
+        #image     = profile.image.name
         identity  = profile.identity
         profession = profile.professional_position
         discipline = profile.discipline
         archetype  = profile.archetype   
         profile_open = "block" #check this  
+
+        print("iamge:")
+        print(image)
 
     if "about-close" in request.POST:
         profile_open = "none"

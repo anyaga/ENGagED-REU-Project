@@ -375,8 +375,8 @@ body:has(#header_col_5:hover)  .col_5{
 }
 
 #participant-pic{
-  width: 28em;
-  height: 30em;
+  width: 15em;
+  height: 12em;
   background-color: plum;
   margin: auto;
 }
