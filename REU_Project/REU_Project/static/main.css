@@ -414,3 +414,7 @@ body:has(#header_col_5:hover)  .col_5{
 }
 
 
+#github_icon {
+  width: 7em;
+  height: 7em;
+}
