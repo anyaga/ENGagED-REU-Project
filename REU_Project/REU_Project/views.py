@@ -113,6 +113,7 @@ def create_participants(request):
                         professional_position="Graduate School",
                         discipline="Mechanical",
                         archetype="Proactive")
+        person1.image.name = "img/masc1.png"
         person1.save()
 
     if not Profile.objects.filter(name="Dad").exists():
@@ -121,6 +122,7 @@ def create_participants(request):
                         professional_position="Young Professional",
                         discipline="Mechanical",
                         archetype="Proactive")  
+        person2.image.name = "img/masc3.png"
         person2.save()
     if not Profile.objects.filter(name="Jae").exists():
         person3 = Profile(name="Jae",
@@ -128,6 +130,7 @@ def create_participants(request):
                         professional_position="Young Professional",
                         discipline="Civil",
                         archetype="Self-Preserving")
+        person3.image.name = "img/masc2.png"
         person3.save()
     if not Profile.objects.filter(name="Gabrielle").exists():
         person4 = Profile(name="Gabrielle",
@@ -135,6 +138,7 @@ def create_participants(request):
                         professional_position="Young Professional",
                         discipline="Chemical",
                         archetype="Traditional")
+        person4.image.name = "img/fem1.png"
         person4.save()
     if not Profile.objects.filter(name="Jesica").exists():
         person5 = Profile(name="Jesica",
@@ -142,6 +146,7 @@ def create_participants(request):
                         professional_position="Young Professional",
                         discipline="Industrial",
                         archetype="Traditional")
+        person5.image.name = "img/fem2.png"
         person5.save()
     return HttpResponse("People created succesfully")
 
@@ -160,27 +165,22 @@ def participants(request):
 
     if "Killua" in request.POST:
         profile = Profile.objects.get(name="Killua")
-        profile.image.name = "img/masc1.png"
 
     if "Dad" in request.POST:
         profile = Profile.objects.get(name="Dad")
-        profile.image.name = "img/masc3.png"
 
     if "Jae" in request.POST:
         profile = Profile.objects.get(name="Jae")
-        profile.image.name = "img/masc2.png"
 
     if "Gabrielle" in request.POST:
         profile = Profile.objects.get(name="Gabrielle")
-        profile.image.name = "img/fem1.png"
 
     if "Jesica" in request.POST:
         profile = Profile.objects.get(name="Jesica")
-        profile.image.name = "img/fem2.png"
 
     if profile is not None:
         name      = profile.name
-        image     = 
+        image     = profile.image.name
         identity  = profile.identity
         profession = profile.professional_position
         discipline = profile.discipline
