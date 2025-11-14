@@ -455,3 +455,8 @@ body:has(#header_col_5:hover)  .col_5{
 #github_img_container:hover #github_icon_black {
   opacity: 1;
 }
+
+#id_profile_pic {
+  width: 20em;
+  height: auto;
+}
