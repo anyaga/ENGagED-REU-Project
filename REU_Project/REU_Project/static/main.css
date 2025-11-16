@@ -122,7 +122,6 @@ center {
 }
 
 /**I DONT KNOW. NEED TO LOOK OVER**/
-
 .menu {
   display: none;
 }
@@ -134,7 +133,6 @@ center {
 }
 
 /**Abstract**/
-
 #full_pdf_viewer {
   background:#7f7f7f;
   padding:50px;
@@ -208,7 +206,7 @@ center {
 
 }
 
-/*--------------Collapsible-------*/
+/*--------------Collapsible---------*/
 .collapsible_button {
   font-size: 21px;
   font-weight: bold;
@@ -223,7 +221,6 @@ center {
   outline: none; 
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   transition: 0.4s;
-
 }
 
 .collapsible_button:after {
@@ -238,7 +235,6 @@ center {
   content: "\2212";
 }
 
-
 .active, .collapsible_button:hover {
   background-color: rgba(70, 68, 65, 0.988);
 }
@@ -251,7 +247,7 @@ center {
   transition: max-height 0.2s ease-out; 
 }
 
-/*--------------Modal-----------------------------------*/
+/*-------------------Modal-------------------------*/
 .button {
   padding: 1em 2em;
   border:0;
@@ -292,17 +288,13 @@ center {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
-
-
 /**Participants**/
-
 .participants {
   border: 3px solid black;
   border-spacing: 0px;
@@ -326,27 +318,27 @@ tr .col_1, .col_2, .col_3, .col_4, .col_5 {
   background-color: #444;
 }
 
-body:has(#header_col_1:hover)  .col_1{
+body:has(#header_col_1:hover) .col_1{
   background-color: #7f7f7f;
   border:0px;
 }
 
-body:has(#header_col_2:hover)  .col_2{
+body:has(#header_col_2:hover) .col_2{
   background-color: #7f7f7f;
   border:0px;
 }
 
-body:has(#header_col_3:hover)  .col_3{
+body:has(#header_col_3:hover) .col_3{
   background-color:#7f7f7f;
   border:0px;
 }
 
-body:has(#header_col_4:hover)  .col_4{
+body:has(#header_col_4:hover) .col_4{
   background-color: #7f7f7f;
   border:0px;
 }
 
-body:has(#header_col_5:hover)  .col_5{
+body:has(#header_col_5:hover) .col_5{
   background-color: #7f7f7f;
   border:0px;
 }
@@ -367,11 +359,10 @@ body:has(#header_col_5:hover)  .col_5{
 .profile-modal-content {
   background-color: rgb(255, 255, 255);
   color: black;
-  margin: 20% auto; /*auto;*/
+  margin: 20% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 70%;  
-  /*box shadow*/
 }
 
 #participant-pic{
@@ -397,7 +388,6 @@ body:has(#header_col_5:hover)  .col_5{
   background: none;
 }
 
-
 .table_text{
   font-family: Calibri;
   color: black;
@@ -407,11 +397,9 @@ body:has(#header_col_5:hover)  .col_5{
   text-indent: 0px;
 }
 
-
 .col_1:hover {
   background-color: #bdbaba;
 }
-
 
 #github_img_container{
   position: relative;
@@ -431,8 +419,8 @@ body:has(#header_col_5:hover)  .col_5{
 #github_icon_white {
   position: absolute;
   object-fit: cover;
-  width: 100%;/*7em;*/
-  height:100%; /*7em;*/
+  width: 100%;
+  height:100%; 
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
   z-index: 2;
@@ -441,8 +429,8 @@ body:has(#header_col_5:hover)  .col_5{
 #github_icon_black {
   position: absolute;
   object-fit: cover;
-  width: 100%;/*7em;*/
-  height:100%; /*7em;*/
+  width: 100%;
+  height:100%; 
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
   z-index: 1;
