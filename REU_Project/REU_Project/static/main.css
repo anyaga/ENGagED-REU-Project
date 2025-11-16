@@ -1,5 +1,4 @@
 /**Basics - Across Pages**/
-
 body, html {
   background-color: rgb(255, 255, 255);
   height: 100%;
@@ -31,7 +30,6 @@ p {
   text-align: justify;
   text-indent: 50px;
 }
-
 
 b {
   text-indent: -2em;
@@ -76,13 +74,16 @@ center {
 }
   
 #id_outline_nav_bar {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.nav-bar-values {float: right;}
+.nav-bar-values {
+  float: right;
+}
+
 .nav-bar-values a {
     display: block;
     color: white;
