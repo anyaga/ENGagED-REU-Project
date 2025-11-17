@@ -26,11 +26,7 @@
     <br>
     <br>
     <div class = "collapsible">
-        <form onsubmit="accButtonDisplayToViews(event)">
-            {% csrf_token %}
-            <!--button class="collapsible_button" name="trad_leader" type="submit">Traditional Leader</button-->
-            <button class="collapsible_button" onclick="clicked='trad_leader'" type="submit">Traditional Leader</button>
-        </form>
+        <button class="collapsible_button" type="button" onclick="accButtonDisplayToViews(event, 'trad_leader')">Traditional Leader</button>
         <div id="trad_content" class="collapsible_content" style="display: {{ trad_leader }};">
             <p>
                 Traditional leaders are often what come to mind when you think 
@@ -85,11 +81,7 @@
             </p>
         </div>
 
-        <form onsubmit="accButtonDisplayToViews(event)">
-            {% csrf_token %}
-            <!--button class="collapsible_button" name="pro_leader" type="submit">Proactive Non-traditional Leader</button-->
-            <button class="collapsible_button" onclick="clicked='pro_leader'" type="submit">Proactive Non-traditional Leader</button>
-        </form>
+        <button class="collapsible_button" type="button" onclick="accButtonDisplayToViews(event, 'pro_leader')">Proactive Non-traditional Leader</button>
         <div id="proactive_content" class="collapsible_content" style="display: {{ pro_leader }};">
             <p>
                 Proactive non-traditional leaders are driven by their need 
@@ -151,11 +143,7 @@
             </p>
         </div>
 
-        <form onsubmit="accButtonDisplayToViews(event)">
-            {% csrf_token %}
-            <!--button class="collapsible_button" name="self_leader" type="submit">Self-preserving Non-traditional Leader</button-->
-            <button class="collapsible_button" onclick="clicked='self_leader'" type="submit">Self-preserving Non-traditional Leader</button>
-        </form>
+        <button class="collapsible_button" type="button" onclick="accButtonDisplayToViews(event, 'self_leader')">Self-preserving Non-traditional Leader</button>        
         <div id="self_content" class="collapsible_content" style="display: {{ self_leader }};">
             <p>             
                 Self-preserving non-traditional leaders are defined by their 
@@ -197,17 +185,19 @@
         </div>
     </div>
     <script>
-        function accButtonDisplayToViews(event){
-            event.preventDefault();  // NOW event actually exists
+        function accButtonDisplayToViews(event, buttonName){
+            event.preventDefault();  
 
             const acc_content_sections = ['trad_content', 'proactive_content', 'self_content'];
-
             let display_vals = {};
+
             acc_content_sections.forEach(content_id => {
                 const element = document.getElementById(content_id);
                 const display = getComputedStyle(element).display;
                 display_vals[content_id] = display;
             });
+
+            display_vals["button"] = buttonName;
 
             fetch('/findings/', {
                 method: 'POST',
@@ -218,7 +208,11 @@
                 body: JSON.stringify(display_vals)
             })
             .then(response => response.json())
-            .then(data => console.log('Response:', data))
+            .then(data => {
+                document.getElementById('trad_content').style.display = data.trad_leader;
+                document.getElementById('proactive_content').style.display = data.pro_leader;
+                document.getElementById('self_content').style.display = data.self_leader;
+            })
             .catch(error => console.log('Error:', error));
         }
     </script>

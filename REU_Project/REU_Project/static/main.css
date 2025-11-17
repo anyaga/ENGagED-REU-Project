@@ -242,7 +242,6 @@ center {
 
 .collapsible_content {    
   padding: 0 4em; 
-  display: none;
   overflow: auto;
   background-color: rgb(170, 166, 166);
   transition: max-height 0.2s ease-out; 

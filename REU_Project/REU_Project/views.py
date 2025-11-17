@@ -55,20 +55,13 @@ def find(request):
             }
             print("JSON decode error:", error_info)
             return JsonResponse(error_info, status=400)
-        print("i made it!!!")
-        traditonal = data.get("trad_content")
-        proactive  = data.get("proactive_content")
-        self_pres  = data.get("self_content")
-
+        traditonal = data.get("trad_content","none")
+        proactive  = data.get("proactive_content","none")
+        self_pres  = data.get("self_content","none")
         button = data.get("button")
 
-        print(button)
-        print(traditonal)
-        print(proactive)
-        print(self_pres)
 
-        if "trad_leader" in request.POST:
-            print("checking!")
+        if button == "trad_leader":
             if traditonal == "none":
                 trad = "block"
             else:
@@ -76,7 +69,7 @@ def find(request):
             pro  = proactive
             self = self_pres
 
-        if "pro_leader" in request.POST:
+        if button == "pro_leader":
             if proactive == "none":
                 pro = "block"
             else:
@@ -84,7 +77,7 @@ def find(request):
             trad = traditonal
             self = self_pres
 
-        if "self_leader" in request.POST:
+        if button == "self_leader":
             if self_pres == "none":
                 self = "block"
             else:
@@ -97,9 +90,6 @@ def find(request):
     context['self_leader'] = self
     print(context)
     return render(request,"find.html",context)
-
-
-
 
 
 def reference(request):
