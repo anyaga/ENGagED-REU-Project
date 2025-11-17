@@ -18,6 +18,12 @@
     <br>
     <div id="full_pdf_viewer" >
         <div id="pdf_viewer">
+            <form method="POST" action="{% url 'abstract' file='NyagaEngagedREUAbstract.pdf' %}">
+                {% csrf_token %}
+                <label for="email">Enter email to Download:</label>
+                <input type="email" id="email" name="email" placeholder="email@domain.com">
+                <button type="submit">Download PDF</button>
+            </form>            
             <object 
                 id="viewer"
                 type="application/pdf"
@@ -25,13 +31,6 @@
                 width="100" height="600">
                 <p>No support PDF.</p>
             </object>    
-            
-            <form method="POST" action="{% url 'download_pdf' 'NyagaEngagedREUAbstract.pdf' %}">
-                {% csrf_token %}
-                <label for="email">Enter email to Download:</label>
-                <input type="email" id="email" name="email" placeholder="email@domain.com">
-                <button type="submit">Download PDF</button>
-            </form>
         </div>
     </div>
 

@@ -16,10 +16,10 @@
                     {% csrf_token %}
                     <button class="open" name="table_close" type="submit">*</button>                
                 </form>
-                <a href="{% url 'abstract' %}">Abstract</a>
+                <a href="{% url 'abstract' file='NyagaEngagedREUAbstract.pdf' %}">Abstract</a>
                 <a href="{% url 'find' %}">Findings</a>
                 <a href="{% url 'participants' %}">Participants</a>
-                <a href="{% url 'doc_preview' %}">Annotated Bibliography</a>
+                <a href="{% url 'doc_preview' file='NyagaEngageREUAnnotatedBiblography.pdf' %}">Annotated Bibliography</a>
                 <a href="{% url 'references' %}">Referenes</a>
             </div>
             <form action="" id="open_sidepanel" method="POST">
