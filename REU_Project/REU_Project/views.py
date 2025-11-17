@@ -37,11 +37,9 @@ def abstract(request):
 
 def find(request):
     #Automatically close the accordian tabs
-    print("\n")
     trad = "none"
     pro  = "none"
     self = "none"
-    print(request)
     #If some action is taken
     if request.method == "POST" and "profile-open" not in request.POST and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
         try:

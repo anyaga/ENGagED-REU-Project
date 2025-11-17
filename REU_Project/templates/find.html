@@ -37,7 +37,7 @@
                 she discussed her involvement as an undergraduate engineer. 
                 She says:  
             </p>
-            <h4 class="quote">
+            <!--h4 class="quote">
                 <i >
                     “So I ended up joining Delta [Historically Black Sorority]. And 
                     then after maybe lika a year after that I did [campus-wide 
@@ -45,9 +45,10 @@
                     little…I joined modeling board [part of college government 
                     organization]”
                 </i>
-                <!--Add quote image here-->
-                <img src="{% static 'img/jesica_quote.png' %}">
-            </h4>
+            </h4-->
+            <div align="center">
+                <img src="{% static 'img/jesica_quote.png' %}">                
+            </div>
             <p>
                 Jesica’s continued interest and success in different 
                 organizations proves a pattern of successful leadership. 
@@ -62,7 +63,7 @@
                 shared a similar experience when discussing her experience as a 
                 young professional in engineering. Gabrielle says:
             </p>
-            <h4 class="quote">
+            <!--h4 class="quote">
                 <i>
                     “...oh, you are so social. You’re so personable. Are you sure 
                     chemical engineering is the right field for you?....I felt as 
@@ -70,9 +71,10 @@
                     worlds that is STEM from the predominantly male, white previous 
                     ecosystem.”
                 </i>
-                <!---Add quote image here-->
+            </h4-->
+            <div align="center">
                 <img src="{% static 'img/Gabrielle_quote.png'%}">
-            </h4>
+            </div>
             <p>
                 Though this archetypes is questioned for its presence in the 
                 engineering field, their natural ability to inspire a group 
@@ -93,7 +95,7 @@
                 necessary to fix it. Examples of this form of leadership 
                 can be seen with Dad. He says:
             </p>
-            <h4 class="quote">
+            <!--h4 class="quote">
                 <i>
                     “...there was no active [company branch of  Latinx young 
                     professional organization]....I expressed my concerns to 
@@ -102,9 +104,10 @@
                     we founded [company branch of  Latinx young professional 
                     organization] and I am the current president.”
                 </i>
-                <!--Add quate img here-->
-                <img src="{% static 'img/new-dad-quote.png'%}">
-            </h4>
+            </h4-->
+            <div align="center">
+                <img src="{% static 'img/new-dad-quote.png'%}">                
+            </div>
             <p>
                 Dad’s journey to becoming the president of his company’s 
                 branch of  the Latinx young professional organization shows 
@@ -121,7 +124,7 @@
                 hope to achieve. Killau relates to this experience as he 
                 recalls his leadership experiences. Killau says:
             </p>
-            <h4 class="quote">
+            <!--h4 class="quote">
                 <i>
                     “I’m the kind of person that’s just like, I’d rather just 
                     get it done and do it. I think a lot of people look up to 
@@ -129,9 +132,10 @@
                     it's like, oh, he must be a leader because he’s getting it 
                     done.”
                 </i>
-                <img src="{% static 'img/new-killau-quote.png' %}">
-                <!--Add quote img here-->
-            </h4>
+            </h4-->
+            <div align="center">
+                <img  src="{% static 'img/new-killau-quote.png' %}">               
+            </div>
             <p>
                 Killau’s ability to be a leader by example shows the power 
                 of proactive non-traditioanl leadership. While Killau did 
@@ -157,7 +161,7 @@
                 demonstrated this leadership style while going over her 
                 experience in the professional engineering world. She says:  
             </p>
-            <h4 class="quote">
+            <!--h4 class="quote">
                 <i>
                     “....sometimes some of the trade contractors are definitely 
                     more abrasive and like, trying to tell you what they know, 
@@ -166,9 +170,10 @@
                     no, before getting your side of things,so I have to be able 
                     to kind of on the fly adapt to them.”
                 </i>
-                <!--Add quote img here-->
+            </h4--->
+            <div align="center">
                 <img src="{% static 'img/Jae_quote.png' %}">
-            </h4>
+            </div>
             <p>
                 Jae’s use of her unique personality traits allowed her to 
                 inspire other people within her field. Because of the 
@@ -193,8 +198,13 @@
 
             acc_content_sections.forEach(content_id => {
                 const element = document.getElementById(content_id);
-                const display = getComputedStyle(element).display;
-                display_vals[content_id] = display;
+                if (element) {
+                    const display = getComputedStyle(element).display;
+                    display_vals[content_id] = display;                    
+                } else {
+                    display_vals[content_id] = 'none';   
+                }
+
             });
 
             display_vals["button"] = buttonName;
@@ -207,11 +217,15 @@
                 },
                 body: JSON.stringify(display_vals)
             })
-            .then(response => response.json())
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error(`Server responded with status ${response.status}`);
+                }   response.json()
+            })
             .then(data => {
-                document.getElementById('trad_content').style.display = data.trad_leader;
-                document.getElementById('proactive_content').style.display = data.pro_leader;
-                document.getElementById('self_content').style.display = data.self_leader;
+                document.getElementById('trad_content').style.display = data.trad_leader || 'none';
+                document.getElementById('proactive_content').style.display = data.pro_leader || 'none';
+                document.getElementById('self_content').style.display = data.self_leader || 'none';
             })
             .catch(error => console.log('Error:', error));
         }
