@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
- 
+
+{% load static %}
+
 {% block title %} Research Findings {% endblock %}
 
 {% block content %}
@@ -24,11 +26,10 @@
     <br>
     <br>
     <div class = "collapsible">
-        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
+        <form onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
-            <button class="collapsible_button" name="trad_leader" type="submit" >
-                Traditional Leader
-            </button>
+            <!--button class="collapsible_button" name="trad_leader" type="submit">Traditional Leader</button-->
+            <button class="collapsible_button" onclick="clicked='trad_leader'" type="submit">Traditional Leader</button>
         </form>
         <div id="trad_content" class="collapsible_content" style="display: {{ trad_leader }};">
             <p>
@@ -84,11 +85,10 @@
             </p>
         </div>
 
-        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
+        <form onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
-            <button class="collapsible_button" name="pro_leader" type="submit" >
-               Proactive Non-traditional Leader
-            </button>
+            <!--button class="collapsible_button" name="pro_leader" type="submit">Proactive Non-traditional Leader</button-->
+            <button class="collapsible_button" onclick="clicked='pro_leader'" type="submit">Proactive Non-traditional Leader</button>
         </form>
         <div id="proactive_content" class="collapsible_content" style="display: {{ pro_leader }};">
             <p>
@@ -151,11 +151,10 @@
             </p>
         </div>
 
-        <form action="" method="POST" onsubmit="accButtonDisplayToViews(event)">
+        <form onsubmit="accButtonDisplayToViews(event)">
             {% csrf_token %}
-            <button class="collapsible_button" name="self_leader" type="submit" >
-                Self-preserving Non-traditional Leader
-            </button>
+            <!--button class="collapsible_button" name="self_leader" type="submit">Self-preserving Non-traditional Leader</button-->
+            <button class="collapsible_button" onclick="clicked='self_leader'" type="submit">Self-preserving Non-traditional Leader</button>
         </form>
         <div id="self_content" class="collapsible_content" style="display: {{ self_leader }};">
             <p>             
@@ -198,30 +197,29 @@
         </div>
     </div>
     <script>
-        function accButtonDisplayToViews(){
-            event.preventDefault();
-            //Send accordian button display values to views.py
-            const acc_content_sections = ['trad_content',
-                                          'proactive_content',
-                                          'self_content']
-            display_vals = {};
+        function accButtonDisplayToViews(event){
+            event.preventDefault();  // NOW event actually exists
+
+            const acc_content_sections = ['trad_content', 'proactive_content', 'self_content'];
+
+            let display_vals = {};
             acc_content_sections.forEach(content_id => {
-                var element = document.getElementById(content_id);
-                var display = getComputedStyle(element).display;
-                display_vals[content_id] = display
+                const element = document.getElementById(content_id);
+                const display = getComputedStyle(element).display;
+                display_vals[content_id] = display;
             });
 
-            //Send to django
-            fetch('/findings/', { 
+            fetch('/findings/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken' : '{{ csrf_token }}'
+                    'X-CSRFToken': '{{ csrf_token }}'
                 },
                 body: JSON.stringify(display_vals)
-            }).then(response => response.json())
-              .then(data => console.log('Response:', data))
-              .catch(error => console.log('Error:', error));
+            })
+            .then(response => response.json())
+            .then(data => console.log('Response:', data))
+            .catch(error => console.log('Error:', error));
         }
     </script>
 {% endblock %}
