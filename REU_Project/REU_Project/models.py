@@ -18,3 +18,7 @@ class Download(models.Model):
     email = models.EmailField()
     pdf   = models.CharField(max_length=255)
     time  = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"email={self.email}\npdf={self.pdf}\ntime={self.time}\n\n"
+        

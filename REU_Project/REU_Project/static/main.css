@@ -448,3 +448,12 @@ body:has(#header_col_5:hover) .col_5{
   width: 20em;
   height: auto;
 }
+
+
+
+.email_form {
+  text-align: center;
+  padding: 2em;
+  background-color: #333;
+  color:white;
+}

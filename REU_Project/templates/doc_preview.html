@@ -23,13 +23,15 @@
     <br>
     <br>
     <div id="full_pdf_viewer" >
-        <div id="pdf_viewer">
+        <div class="email_form">
             <form method="POST" action="{% url 'doc_preview' file='NyagaEngageREUAnnotatedBiblography.pdf' %}">
                 {% csrf_token %}
                 <label for="email">Enter email to Download:</label>
                 <input type="email" name="email" placeholder="email@domain.com">
                 <button type="submit">Download PDF</button>
-            </form>            
+            </form>               
+        </div>
+        <div id="pdf_viewer">
             <object 
                 id="viewer"
                 type="application/pdf"
