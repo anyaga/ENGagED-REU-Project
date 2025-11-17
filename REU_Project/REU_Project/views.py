@@ -37,10 +37,9 @@ def abstract(request,file):
         form = download_form(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            Download.objects.create(email=email)
+            Download.objects.create(email=email,pdf=file)
     else:
         form = download_form()
-
 
     context = helper_side_panel(request)
     context['form'] = form
@@ -109,7 +108,7 @@ def doc_preview(request,file):
         form = download_form(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            Download.objects.create(email=email)
+            Download.objects.create(email=email,pdf=file)
     else:
         form = download_form()
 
