@@ -1,8 +1,9 @@
-from django.http       import HttpResponse, JsonResponse
+from django.http       import HttpResponse, JsonResponse, FileResponse
 from django.core.files import File
 from django.conf       import settings
 from django.shortcuts  import render
-from .models           import Profile
+from .models           import Profile, Download
+from .forms            import download_form
 
 import json
 
@@ -32,6 +33,14 @@ def home(request):
     return render(request, "index.html",context)
 
 def abstract(request):
+    if request.method == 'POST':
+        form = download_form(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+
+            Download.objects.create(email=email)
+
+
     context = helper_side_panel(request)
     return render(request,"abstract.html",context)
 

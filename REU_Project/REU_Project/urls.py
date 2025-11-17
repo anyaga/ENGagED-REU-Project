@@ -27,6 +27,7 @@ urlpatterns = [
     path("references/",views.reference,     name="references"),
     path("document_preview/",views.doc_preview,name="doc_preview"),
     path("participants/",views.participants,name="participants" ),
+    
 ]
 
 if settings.DEBUG:
