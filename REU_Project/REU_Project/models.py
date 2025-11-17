@@ -14,8 +14,6 @@ class Profile(models.Model):
         sub2 = f"discipline={self.discipline}\narchetype={self.archetype}\n\n"
         return sub1 + sub2
     
-
-
 class Download(models.Model):
     email = models.EmailField()
     pdf   = models.CharField(max_length=255)

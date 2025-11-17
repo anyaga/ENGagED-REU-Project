@@ -98,12 +98,17 @@ def find(request):
     print(context)
     return render(request,"find.html",context)
 
-
 def reference(request):
     context = helper_side_panel(request)
     return render(request,"ref.html",context)
 
 def doc_preview(request):
+    if request.method == 'POST':
+        form = download_form(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            Download.objects.create(email=email)
+
     context = helper_side_panel(request)
     return render(request,"doc_preview.html",context)
 
