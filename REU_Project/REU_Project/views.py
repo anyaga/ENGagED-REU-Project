@@ -32,16 +32,18 @@ def home(request):
     context = helper_side_panel(request)
     return render(request, "index.html",context)
 
-def abstract(request):
+def abstract(request,file):
     if request.method == 'POST':
         form = download_form(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-
             Download.objects.create(email=email)
+    else:
+        form = download_form()
 
 
     context = helper_side_panel(request)
+    context['form'] = form
     return render(request,"abstract.html",context)
 
 def find(request):
@@ -102,14 +104,17 @@ def reference(request):
     context = helper_side_panel(request)
     return render(request,"ref.html",context)
 
-def doc_preview(request):
+def doc_preview(request,file):
     if request.method == 'POST':
         form = download_form(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
             Download.objects.create(email=email)
+    else:
+        form = download_form()
 
     context = helper_side_panel(request)
+    context['form'] = form
     return render(request,"doc_preview.html",context)
 
 def create_participants(request):
