@@ -225,15 +225,17 @@ center {
 }
 
 .collapsible_button:after {
-  content: '\002B';
+  content: '\002B';    
   color: black;
   font-weight: bold;
   float: right;
   margin-left: 5px;
 }
 
-.collapsible_button.after:after {
-  content: "\2212";
+.collapsible_content[display="block"] {
+  .collapsible_button:after{
+    content:"\2212"; 
+  }
 }
 
 .active, .collapsible_button:hover {
@@ -241,7 +243,7 @@ center {
 }
 
 .collapsible_content {    
-  padding: 0 4em; 
+  padding: 4em; 
   overflow: auto;
   background-color: rgb(170, 166, 166);
   transition: max-height 0.2s ease-out; 
@@ -448,8 +450,6 @@ body:has(#header_col_5:hover) .col_5{
   width: 20em;
   height: auto;
 }
-
-
 
 .email_form {
   text-align: center;
