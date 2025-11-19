@@ -21,4 +21,9 @@ class Download(models.Model):
 
     def __str__(self):
         return f"email={self.email}\npdf={self.pdf}\ntime={self.time}\n\n"
-        
+
+class PageView(models.Model):
+    ip_address = models.GenericIPAddressField()
+    timestamp  = models.DateTimeField(auto_now_add=True)
+    path = models.CharField(max_length=255)
+    user_agent = models.CharField(max_length=255,blank=True,null=True)

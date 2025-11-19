@@ -2,7 +2,7 @@ from django.http       import HttpResponse, JsonResponse, FileResponse
 from django.core.files import File
 from django.conf       import settings
 from django.shortcuts  import render
-from .models           import Profile, Download
+from .models           import Profile, Download, PageView
 from .forms            import download_form
 import json
 
@@ -53,7 +53,8 @@ def find(request):
     trad = "none"
     pro  = "none"
     self_var = "none"
-    if request.method == "POST" and "profile-open" not in request.POST  and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
+    if request.method == "POST" and request.content_type == "application/json":
+    #if request.method == "POST" and "profile-open" not in request.POST  and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
         try:
             data = json.loads(request.body)
         except json.JSONDecodeError as e:
