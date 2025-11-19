@@ -342,7 +342,8 @@ body:has(#header_col_5:hover) .col_5{
   border:0px;
 }
 
-.profile-modal {
+#profile-modal {
+  display: none;
   position: fixed;              
   z-index: 1; 
   padding-top: 100px; 
@@ -355,13 +356,19 @@ body:has(#header_col_5:hover) .col_5{
 }
 
 /* Modal Content */
-.profile-modal-content {
+#profile-modal-content {
   background-color: rgb(255, 255, 255);
   color: black;
   margin: 20% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 70%;  
+  
+  max-width:90%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 #participant-pic{

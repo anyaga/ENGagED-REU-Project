@@ -53,8 +53,6 @@ def find(request):
     trad = "none"
     pro  = "none"
     self_var = "none"
-    #If some action is taken
-    #if request.method == "POST" and request.content_type == "application/json":
     if request.method == "POST" and "profile-open" not in request.POST  and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
         try:
             data = json.loads(request.body)
@@ -105,7 +103,6 @@ def find(request):
     context['trad_leader'] = trad
     context['pro_leader']  = pro
     context['self_leader'] = self_var
-    print(context)
     return render(request,"find.html",context)
 
 def reference(request):
@@ -181,11 +178,9 @@ def participants(request):
     discipline = None
     archetype  = None
     
-
     if "Killua" in request.POST:
         profile = Profile.objects.get(name="Killua")
         image =  "img/masc1.png"
-
 
     if "Dad" in request.POST:
         profile = Profile.objects.get(name="Dad")
@@ -213,8 +208,6 @@ def participants(request):
         archetype  = profile.archetype   
         profile_open = "block" #check this  
 
-        print("iamge:")
-        print(image)
 
     if "about-close" in request.POST:
         profile_open = "none"

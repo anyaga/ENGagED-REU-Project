@@ -98,8 +98,8 @@
                         </p>
                     </div>
                 </div>
-                <div id="profile_modal" class="modal" style="display: {{ profile_value }};">
-                    <div class="modal-content">
+                <div id="profile-modal" style="display: {{ profile_value }};">
+                    <div id="profile-modal-content">
                         <div>
                             <form action="" method="POST">
                                 {% csrf_token %}
@@ -113,9 +113,9 @@
                         <br><br><br>
                         <div id="personal_bio"></div>
                         <div>
-                            <table align="center" style="border:1px solid;">
+                            <table align="center" style="border:1px solid; border-collapse: collapse; width:100%;">
                                 <tr>
-                                    <td style="border:2px solid;">
+                                    <td style="border:2px solid; word-wrap: break-word;text-align: left;">
                                         <div id="personal_edu_list">
                                             <p style="text-indent: 0px; padding:1em;"> 
                                                 <b style="margin-left: 0px;">Carnegie Mellon University</b><br>
@@ -124,16 +124,16 @@
                                             </p>
                                         </div>                                    
                                     </td>
-                                    <td>
-                                        <div style="width:25em;">
+                                    <td style="word-wrap: break-word;text-align: left;">
+                                        <div style="width:25em; padding:2em;">
                                             <p>
                                                 Angel Nyaga completed a degree in Electrical and Computer Engineering from Carnegie Mellon University. 
                                                 She currently works as a Software Engineer at Capital One
                                             </p>                                        
                                         </div>
                                     </td>
-                                    <td>
-                                        <div id="personal_github">
+                                    <td style="word-wrap: break-word;text-align: left;">
+                                        <div id="personal_github" style="padding: 3em;">
                                             <a href="https://github.com/anyaga">
                                                 <div id="github_img_container">
                                                     <img id="github_icon_white" src="{% static 'img/github_black.jpg' %}" alt="Github White">
