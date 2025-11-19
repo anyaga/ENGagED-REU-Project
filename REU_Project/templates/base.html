@@ -114,19 +114,44 @@
                             <img id="id_profile_pic"src="{% static 'img/profile_pic.jpg'%}">
                         </div>
                         <div id="personal_bio"></div>
-                        <div id="personal_edu_list">
-                            <h3>Carnegie Mellon University</h3>
-                            <p>Bachelors in Science</p>
-                            <p>Electrical and Computer Engineering</p>
+                        <div>
+                            <table style="border:1px solid;">
+                                <tr>
+                                    <td style="border:1px solid;">
+                                        <div id="personal_edu_list">
+                                            <p style="text-indent: 0px; padding:1em;"> 
+                                                Carnegie Mellon University<br>
+                                                Bachelors in Science<br>
+                                                Electrical and Computer Engineering
+                                            </p>
+                                        </div>                                    
+                                    </td>
+                                    <td style="border:1px solid;">
+                                        <div style="width:15em;">
+                                            <p>bio!!!</p>                                        
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="personal_github">
+                                            <a href="https://github.com/anyaga">
+                                                <div id="github_img_container">
+                                                    <img id="github_icon_white" src="{% static 'img/github_black.jpg' %}" alt="Github White">
+                                                    <img id="github_icon_black" src="{% static 'img/github_white.jpg' %}" alt="Github Black">
+                                                </div>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/angel-nyaga/">
+                                                <div id="linkedin_img_container">
+                                                    <img id="linkedin_blue"  src="{% static 'img/linkedin-blue.png'%}"  alt="LinkedIn Blue">
+                                                    <img id="linkedin_black" src="{% static 'img/linkedin-black.png' %}" alt="LinkedIn Black">
+                                                </div>
+                                            </a>
+                                        </div>                                    
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-                        <div id="personal_github">
-                            <a href="https://github.com/anyaga">
-                                <div id="github_img_container">
-                                    <img id="github_icon_white" src="{% static 'img/github_white.jpg' %}" alt="Github White">
-                                    <img id="github_icon_black" src="{% static 'img/github_black.jpg' %}" alt="Github Black">
-                                </div>
-                            </a>
-                        </div>
+
                     </div>                        
                 </div>                    
             </div>

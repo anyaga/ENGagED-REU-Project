@@ -128,7 +128,6 @@ center {
 }
 
 /**FINDINGS**/
-
 .quote {
   margin: 3em;
 }
@@ -203,8 +202,7 @@ center {
 
 .top {
   color: white;
-  padding: 20px 15px
-
+  padding: 20px 15px;
 }
 
 /*--------------Collapsible---------*/
@@ -230,12 +228,6 @@ center {
   font-weight: bold;
   float: right;
   margin-left: 5px;
-}
-
-.collapsible_content[display="block"] {
-  .collapsible_button:after{
-    content:"\2212"; 
-  }
 }
 
 .active, .collapsible_button:hover {
@@ -368,11 +360,10 @@ body:has(#header_col_5:hover) .col_5{
 }
 
 #participant-pic{
-  width: 15em;
+  width: 100%;
   height: auto;
   display:block;
-  background-color: plum;
-  margin: auto;
+  background-color: rgb(108, 108, 108);
   text-align: center;
 }
 
@@ -447,6 +438,48 @@ body:has(#header_col_5:hover) .col_5{
 #github_img_container:hover #github_icon_black {
   opacity: 1;
 }
+
+
+
+#linkedin_img_container{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  width: 7em;
+  height: 7em;
+}
+
+#linkedin_blue {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height:100%; 
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  z-index: 2;
+}
+
+#linkedin_black {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height:100%; 
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+#linkedin_img_container:hover #linkedin_blue {
+  opacity: 0;
+}
+
+#linkedin_img_container:hover #linkedin_black {
+  opacity: 1;
+}
+
 
 #id_profile_pic {
   width: 20em;
