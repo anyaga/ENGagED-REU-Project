@@ -369,9 +369,11 @@ body:has(#header_col_5:hover) .col_5{
 
 #participant-pic{
   width: 15em;
-  height: 12em;
+  height: auto;
+  display:block;
   background-color: plum;
   margin: auto;
+  text-align: center;
 }
 
 #profile_details {
@@ -457,3 +459,5 @@ body:has(#header_col_5:hover) .col_5{
   background-color: #333;
   color:white;
 }
+
+

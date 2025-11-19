@@ -10,10 +10,13 @@
                 <button id="id-about-close" type="submit" name="about-close">x</button>                                
             </form>
             <table id="profile_details">
-                <tr>
-                    <div id="participant-pic">
-                        <img src="{% static image  %}" alt="Profile Pic">
-                    </div>
+                <tr  colspan="2" style="text-align: center;">
+                    <td id="participant-pic" rowspan="3">
+                        <div >
+                            <img src="{% static image  %}" alt="Profile Pic">
+                        </div>
+                    </td>
+
                 </tr>
                 <tr>
                     <td style="padding:0.4em;"><b>Name: </b>{{ name }}</td>
