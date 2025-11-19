@@ -114,6 +114,10 @@ center {
   text-align: right;
 }
 
+.inside-about{
+  text-align: center;
+}
+
 .page_title {
   color:#000;
   font-size: 2em;
@@ -253,8 +257,9 @@ center {
 
 /* The Modal (background) */
 .modal {
+  display: none;
   position: fixed;              
-  z-index: 1; 
+  z-index: 1000; 
   padding-top: 100px; 
   left: 0;
   top: 0;
@@ -480,9 +485,14 @@ body:has(#header_col_5:hover) .col_5{
   opacity: 1;
 }
 
+#personal_profile_pic{
+  padding: 3em;
+  border: 2px black;
+  background-color: #5a5858;
+}
 
 #id_profile_pic {
-  width: 20em;
+  width: 25em;
   height: auto;
 }
 

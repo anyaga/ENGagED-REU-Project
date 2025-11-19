@@ -4,13 +4,13 @@ from django.conf       import settings
 from django.shortcuts  import render
 from .models           import Profile, Download
 from .forms            import download_form
-
 import json
 
 def helper_side_panel(request):
     display_value = "none"
     profile_value = "none"
     panel_size = "0em"
+    show_modal = False
     if "about-open" in request.POST:
         display_value = "block"
     if "about-close" in request.POST:
@@ -21,10 +21,13 @@ def helper_side_panel(request):
         panel_size = "0em"
     if "profile-open" in request.POST:
         profile_value = "block"
+    if "open_modal" in request.POST:
+        show_modal = True
     context = {
         "display_value":display_value,
         "profile_value":profile_value,
-        "panel_size":panel_size,
+        "panel_size":   panel_size,
+        "show_modal":   show_modal
     }
     return context
 
