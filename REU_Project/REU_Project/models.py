@@ -27,3 +27,7 @@ class PageView(models.Model):
     timestamp  = models.DateTimeField(auto_now_add=True)
     path = models.CharField(max_length=255)
     user_agent = models.CharField(max_length=255,blank=True,null=True)
+
+
+    def __str__(self):
+        return ""

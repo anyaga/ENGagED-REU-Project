@@ -36,6 +36,23 @@ def home(request):
     return render(request, "index.html",context)
 
 def abstract(request,file):
+    #get real visitor ip address
+    x_fwd = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_fwd:
+        ip = x_fwd.split(",")[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    user = request.META.get('HTTP_USER_AGEMT',"")
+
+    path = request.path
+
+    PageView.objects.create(
+        ip_address=ip,
+        path=path,
+        user_agent=user
+    )
+
     if request.method == 'POST':
         form = download_form(request.POST)
         if form.is_valid():
