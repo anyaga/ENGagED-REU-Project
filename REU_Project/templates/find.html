@@ -21,9 +21,6 @@
     </p>
     <br>
     <br>
-    <p> {{ trad_leader }}   {{ pro_leader }}</p>
-    <br>
-    <br>
     <br>
     <div class = "collapsible">
         <button class="collapsible_button" type="button" onclick="accButtonDisplayToViews(event, 'trad_leader')">Traditional Leader</button>
@@ -219,7 +216,7 @@
             .then(response => {
                 if(!response.ok) {
                     throw new Error(`Server responded with status ${response.status}`);
-                }   response.json()
+                }   return response.json()
             })
             .then(data => {
                 document.getElementById('trad_content').style.display = data.trad_leader || 'none';

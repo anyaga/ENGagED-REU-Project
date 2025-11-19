@@ -49,7 +49,7 @@ def find(request):
     #Automatically close the accordian tabs
     trad = "none"
     pro  = "none"
-    self = "none"
+    self_var = "none"
     #If some action is taken
     if request.method == "POST" and request.content_type == "application/json":
     #"profile-open" not in request.POST  and "about-open" not in request.POST and "about-close" not in request.POST  and "table_close" not in request.POST and "table_of_contents" not in request.POST:
@@ -76,7 +76,7 @@ def find(request):
             else:
                 trad = "none"
             pro  = proactive
-            self = self_pres
+            self_var = self_pres
 
         if button == "pro_leader":
             if proactive == "none":
@@ -84,19 +84,24 @@ def find(request):
             else:
                 pro = "none"
             trad = traditonal
-            self = self_pres
+            self_var = self_pres
 
         if button == "self_leader":
             if self_pres == "none":
-                self = "block"
+                self_var = "block"
             else:
-                self = "none"
+                self_var = "none"
             trad = traditonal
             pro = proactive
+        return JsonResponse({
+            "trad_leader":trad,
+            "pro_leader":pro,
+            "self_leader":self_var
+        })
     context = helper_side_panel(request)
     context['trad_leader'] = trad
     context['pro_leader']  = pro
-    context['self_leader'] = self
+    context['self_leader'] = self_var
     print(context)
     return render(request,"find.html",context)
 
