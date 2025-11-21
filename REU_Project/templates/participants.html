@@ -3,13 +3,14 @@
 {% block title %}  Research Participants {% endblock %}
  
 {% block content %}    
-    <div class="profile-modal"  style="display:{{ profile_open }} ;">
-        <div class="profile-modal-content">
+    <div id="parti-profile-modal"  style="display:{{ profile_open }} ;">
+        <div id="parti-modal-content">
             <form action="" method="POST">
                 {% csrf_token %}
                 <button id="id-about-close" type="submit" name="about-close">x</button>                                
             </form>
-            <table id="profile_details" style="border-collapse: collapse; table-layout: fixed;">
+            <table id="profile_details">
+            <!--table id="profile_details" style="border-collapse: collapse; table-layout: fixed;"-->
                 <tr>
                     <td id="participant-pic" colspan="2">
                         <img src="{% static image  %}" alt="Profile Pic">
