@@ -30,4 +30,4 @@ class PageView(models.Model):
 
 
     def __str__(self):
-        return "text"
+        return f"ip-address{self.ip_address}"
