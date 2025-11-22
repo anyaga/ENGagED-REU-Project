@@ -1,15 +1,16 @@
  # ENGagED REU Website
 
-This website was created as a visual representation of my research findings across a 10 weeks program. This program was sponsored by the National Science Foundation and hosted by faculty from Arizona State University. Visit anyaga.github.io/REU to look at this site live.
+This website was created as a visual representation of my research findings during a 10 week program. This program was sponsored by the National Science Foundation and hosted by faculty from Arizona State University. Visit ---- to look at this site live.
 
 
-This projet was originally a static website built primarly from html and css. It was updated to include a **django framework** , utilizing python, javascrript, html and css.
+This projet was originally a static website built primarly from html and css. It was updated to include a **django framework** , utilizing python, javascript, html, css, and sql lite.
 
 Features include:
 - accordian
 - sidebar
 - modal
 - data collection
+- database 
 
 
 ## Important Commnds
