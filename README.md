@@ -11,6 +11,7 @@ Features include:
 - modal
 - data collection
 - database 
+- **add more
 
 
 ## Important Commnds
