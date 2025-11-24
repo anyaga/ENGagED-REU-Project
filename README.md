@@ -10,8 +10,9 @@ Features include:
 - sidebar
 - modal
 - data collection
-- database 
+- database management
 - **add more
+- 
 
 
 ## Important Commnds
