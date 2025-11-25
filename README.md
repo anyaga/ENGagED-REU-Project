@@ -11,6 +11,8 @@ Features include:
 - modal
 - data collection
 - database management
+- Django forms 
+- Django models
 - **add more
 - 
 
