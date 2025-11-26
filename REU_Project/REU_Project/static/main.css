@@ -395,7 +395,7 @@ body:has(#header_col_5:hover) .col_5{
   width: 100%;
   height: auto;
   display:block;
-  background-color: rgb(108, 108, 108);
+  /**background-color: rgb(108, 108, 108);**/
   text-align: center;
 }
 
