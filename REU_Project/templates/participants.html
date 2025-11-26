@@ -9,13 +9,17 @@
                 {% csrf_token %}
                 <button id="id-about-close" type="submit" name="about-close">x</button>                                
             </form>
+
+            <div id="participant-pic">
+                <img src="{% static image  %}" alt="Profile Pic">
+            </div>
             <table id="profile_details">
             <!--table id="profile_details" style="border-collapse: collapse; table-layout: fixed;"-->
-                <tr>
+                <!--tr>
                     <td id="participant-pic" colspan="2">
                         <img src="{% static image  %}" alt="Profile Pic">
                     </td>
-                </tr>
+                </tr--->
                 <tr>
                     <td style="padding:0.4em;"><b>Name: </b>{{ name }}</td>
                     <td style="padding:0.4em;"><b>Job: </b>{{ profession }}</td>
