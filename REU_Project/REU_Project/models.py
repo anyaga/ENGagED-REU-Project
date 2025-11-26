@@ -13,7 +13,8 @@ class Profile(models.Model):
         sub1 = f"name={self.name}\n identity={self.identity}\n prof={self.professional_position}"
         sub2 = f"discipline={self.discipline}\narchetype={self.archetype}\n\n"
         return sub1 + sub2
-    
+
+#See who downloads my papers
 class Download(models.Model):
     email = models.EmailField()
     pdf   = models.CharField(max_length=255)
@@ -22,12 +23,22 @@ class Download(models.Model):
     def __str__(self):
         return f"email={self.email} downloaded {self.pdf} at {self.time}\n"
 
+#See who views a page
 class PageView(models.Model):
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField() #Both IPv4 and IPv6
     timestamp  = models.DateTimeField(auto_now_add=True)
-    path = models.CharField(max_length=255)
+    path       = models.CharField(max_length=255)
     user_agent = models.CharField(max_length=255,blank=True,null=True)
+    #user-agent->browser,os,bot strings
 
+    #A User-Agent (often abbreviated UA) is a small text string 
+    # that your browser—or any client making an HTTP request—sends 
+    # to a website to identify:
 
+    """
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+        AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/119.0.0.0 Safari/537.36
+    """
     def __str__(self):
         return f"ip-address{self.ip_address}"

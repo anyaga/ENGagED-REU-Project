@@ -4,6 +4,7 @@ from django.conf       import settings
 from django.shortcuts  import render
 from .models           import Profile, Download, PageView
 from .forms            import download_form
+from .utils            import get_client_ip
 import json
 import os
 
@@ -37,17 +38,10 @@ def home(request):
     return render(request, "index.html",context)
 
 def abstract(request,file):
-    #get real visitor ip address
-
     if not os.path.exists(file):
-        raise Http404('File not found.')
+        raise Http404('Abstract not found.')
 
-    x_fwd = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_fwd:
-        ip = x_fwd.split(",")[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-
+    ip = get_client_ip(request)
     user = request.META.get('HTTP_USER_AGEMT',"")
     path = request.path
 
@@ -73,6 +67,37 @@ def abstract(request,file):
     context = helper_side_panel(request)
     context['form'] = form
     return render(request,"abstract.html",context)
+
+def doc_preview(request,file):
+    if not os.path.exists(file):
+        raise Http404('Biblography not found.')
+
+    ip = get_client_ip(request)
+    user = request.META.get('HTTP_USER_AGEMT',"")
+    path = request.path
+
+    #Someone has seen the page
+    PageView.objects.create(
+        ip_address=ip,
+        path=path,
+        user_agent=user
+    )
+
+    #Some wants to download the file
+    if request.method == 'POST':
+        form = download_form(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            Download.objects.create(
+                email=email,
+                pdf=file
+            )
+    else:
+        form = download_form()
+
+    context = helper_side_panel(request)
+    context['form'] = form
+    return render(request,"doc_preview.html",context)
 
 def find(request):
     #Automatically close the accordian tabs
@@ -135,19 +160,6 @@ def find(request):
 def reference(request):
     context = helper_side_panel(request)
     return render(request,"ref.html",context)
-
-def doc_preview(request,file):
-    if request.method == 'POST':
-        form = download_form(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            Download.objects.create(email=email,pdf=file)
-    else:
-        form = download_form()
-
-    context = helper_side_panel(request)
-    context['form'] = form
-    return render(request,"doc_preview.html",context)
 
 def create_participants(request):
     if not Profile.objects.filter(name="Killua").exists():
@@ -232,7 +244,6 @@ def participants(request):
         discipline = profile.discipline
         archetype  = profile.archetype   
         profile_open = "block" #check this  
-
 
     if "about-close" in request.POST:
         profile_open = "none"
