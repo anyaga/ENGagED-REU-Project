@@ -20,7 +20,7 @@ class Download(models.Model):
     time  = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"email={self.email}\npdf={self.pdf}\ntime={self.time}\n\n"
+        return f"email={self.email} downloaded {self.pdf} at {self.time}\n"
 
 class PageView(models.Model):
     ip_address = models.GenericIPAddressField()

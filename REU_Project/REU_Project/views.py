@@ -1,10 +1,11 @@
-from django.http       import HttpResponse, JsonResponse, FileResponse
+from django.http       import HttpResponse, JsonResponse, FileResponse, Http404
 from django.core.files import File
 from django.conf       import settings
 from django.shortcuts  import render
 from .models           import Profile, Download, PageView
 from .forms            import download_form
 import json
+import os
 
 def helper_side_panel(request):
     display_value = "none"
@@ -37,6 +38,10 @@ def home(request):
 
 def abstract(request,file):
     #get real visitor ip address
+
+    if not os.path.exists(file):
+        raise Http404('File not found.')
+
     x_fwd = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_fwd:
         ip = x_fwd.split(",")[0]
@@ -44,20 +49,24 @@ def abstract(request,file):
         ip = request.META.get('REMOTE_ADDR')
 
     user = request.META.get('HTTP_USER_AGEMT',"")
-
     path = request.path
 
+    #Someone has seen the page
     PageView.objects.create(
         ip_address=ip,
         path=path,
         user_agent=user
     )
 
+    #Some wants to download the file
     if request.method == 'POST':
         form = download_form(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            Download.objects.create(email=email,pdf=file)
+            Download.objects.create(
+                email=email,
+                pdf=file
+            )
     else:
         form = download_form()
 
@@ -217,9 +226,7 @@ def participants(request):
         image =  "img/fem2.png"
 
     if profile is not None:
-        
         name      = profile.name
-        #image     = profile.image.name
         identity  = profile.identity
         profession = profile.professional_position
         discipline = profile.discipline
