@@ -2,11 +2,14 @@ from django.http       import HttpResponse, JsonResponse, FileResponse, Http404
 from django.core.files import File
 from django.conf       import settings
 from django.shortcuts  import render
+from django.utils      import timezone
+from datetime          import timedelta
 from .models           import Profile, Download, PageView
 from .forms            import download_form
 from .utils            import get_client_ip
 import json
 import os
+
 
 def helper_side_panel(request):
     display_value = "none"
@@ -60,9 +63,22 @@ def abstract(request,file):
             Download.objects.create(
                 email=email,
                 pdf=file
+                time=timezone.now()
             )
+            #all the last downloads in the last 4 min by this emial
+            recent = Download.objects.filter(
+                        email=email,
+                        time=timezone.now() - timedelta(minutes=4)
+                    ).count()
+            if recent >= 3:
+                return HttpResponse('Too many downloads. Try again later')
     else:
         form = download_form()
+
+
+
+
+    
 
     context = helper_side_panel(request)
     context['form'] = form
@@ -87,10 +103,23 @@ def doc_preview(request,file):
     if request.method == 'POST':
         form = download_form(request.POST)
         if form.is_valid():
+
+            page_view_id = request.session.get('page_view_id')
+            page_view    = None
+
+
+            if page_view_id:
+                try:
+                    page_view = PageView.objects.get(id=page_view_id)
+                except PageView.DoesNotExist:
+                    page_view = None
+
+
             email = form.cleaned_data['email']
             Download.objects.create(
                 email=email,
-                pdf=file
+                pdf=file,
+                page_view=page_view
             )
     else:
         form = download_form()

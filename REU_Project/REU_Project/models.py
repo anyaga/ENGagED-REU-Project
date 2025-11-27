@@ -20,6 +20,8 @@ class Download(models.Model):
     pdf   = models.CharField(max_length=255)
     time  = models.DateTimeField(auto_now_add=True)
 
+    page_view = models.ForeignKey(PageView, null=True, blank=True, on_delete=models.SET_NULL)
+
     def __str__(self):
         return f"email={self.email} downloaded {self.pdf} at {self.time}\n"
 
@@ -29,7 +31,8 @@ class PageView(models.Model):
     timestamp  = models.DateTimeField(auto_now_add=True)
     path       = models.CharField(max_length=255)
     user_agent = models.CharField(max_length=255,blank=True,null=True)
-    #user-agent->browser,os,bot strings
+
+
 
     #A User-Agent (often abbreviated UA) is a small text string 
     # that your browser—or any client making an HTTP request—sends 
