@@ -81,7 +81,7 @@ def abstract(request,file):
 
 def doc_preview(request,file):
     if not os.path.exists(file):
-        raise Http404('Biblography not found.')
+        raise Http404('Bibliography not found.')
 
     ip = get_client_ip(request)
     user = request.META.get('HTTP_USER_AGEMT',"")
@@ -96,12 +96,10 @@ def doc_preview(request,file):
 
     #Some wants to download the file
     if request.method == 'POST':
-        form = download_form(request.POST)
-        if form.is_valid():
-
+        down_form = download_form(request.POST)
+        if down_form.is_valid():
             page_view_id = request.session.get('page_view_id')
             page_view    = None
-
 
             if page_view_id:
                 try:
@@ -109,18 +107,17 @@ def doc_preview(request,file):
                 except PageView.DoesNotExist:
                     page_view = None
 
-
-            email = form.cleaned_data['email']
+            email = down_form.cleaned_data['email']
             Download.objects.create(
                 email=email,
                 pdf=file,
                 page_view=page_view
             )
     else:
-        form = download_form()
+        down_form = download_form()
 
     context = helper_side_panel(request)
-    context['form'] = form
+    context['form'] = down_form
     return render(request,"doc_preview.html",context)
 
 def find(request):
