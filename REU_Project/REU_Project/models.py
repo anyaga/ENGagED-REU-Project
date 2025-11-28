@@ -30,9 +30,9 @@ class PageView(models.Model):
     ip_address = models.GenericIPAddressField() #Both IPv4 and IPv6
     timestamp  = models.DateTimeField(auto_now_add=True)
     path       = models.CharField(max_length=255)
+    
+    ############## Look over this section #################
     user_agent = models.CharField(max_length=255,blank=True,null=True)
-
-
 
     #A User-Agent (often abbreviated UA) is a small text string 
     # that your browser—or any client making an HTTP request—sends 

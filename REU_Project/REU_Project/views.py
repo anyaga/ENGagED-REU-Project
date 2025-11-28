@@ -62,7 +62,7 @@ def abstract(request,file):
             email = down_form.cleaned_data['email']
             Download.objects.create(
                 email=email,
-                pdf=file
+                pdf=file,
                 time=timezone.now()
             )
             #all the last downloads in the last 4 min by this emial
@@ -276,5 +276,4 @@ def participants(request):
     context["profession"] = profession
     context["discipline"] = discipline
     context["archetype"]  = archetype
-
     return render(request,"participants.html",context)
