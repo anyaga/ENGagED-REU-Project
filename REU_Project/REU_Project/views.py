@@ -57,9 +57,9 @@ def abstract(request,file):
 
     #Some wants to download the file
     if request.method == 'POST':
-        form = download_form(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
+        down_form = download_form(request.POST)
+        if down_form.is_valid():
+            email = down_form.cleaned_data['email']
             Download.objects.create(
                 email=email,
                 pdf=file
@@ -73,15 +73,10 @@ def abstract(request,file):
             if recent >= 3:
                 return HttpResponse('Too many downloads. Try again later')
     else:
-        form = download_form()
-
-
-
-
-    
+        down_form = download_form()
 
     context = helper_side_panel(request)
-    context['form'] = form
+    context['form'] = down_form
     return render(request,"abstract.html",context)
 
 def doc_preview(request,file):
