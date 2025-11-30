@@ -70,7 +70,7 @@ def abstract(request,file):
                         email=email,
                         time=timezone.now() - timedelta(minutes=4)
                     ).count()
-            if recent >= 3:
+            if recent >= 4:
                 return HttpResponse('Too many downloads. Try again later')
     else:
         down_form = download_form()
@@ -87,7 +87,7 @@ def doc_preview(request,file):
     user = request.META.get('HTTP_USER_AGEMT',"")
     path = request.path
 
-    #Someone has seen the page
+    #If someone has seen the page
     PageView.objects.create(
         ip_address=ip,
         path=path,
