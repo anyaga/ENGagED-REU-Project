@@ -84,14 +84,14 @@ def doc_preview(request,file):
         raise Http404('Bibliography not found.')
 
     ip = get_client_ip(request)
-    user = request.META.get('HTTP_USER_AGEMT',"")
+    user_agent = request.META.get('HTTP_USER_AGEMT',"")
     path = request.path
 
     #If someone has seen the page
     PageView.objects.create(
         ip_address=ip,
         path=path,
-        user_agent=user
+        user_agent=user_agent
     )
 
     #Some wants to download the file
