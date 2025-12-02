@@ -3,6 +3,7 @@ from .models        import Profile, Download, PageView
 
 '''
 See if these lines are still necessary
+
 admin.site.register(PageView)
 admin.site.register(Download)
 admin.site.register(Profile)

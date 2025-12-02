@@ -45,14 +45,14 @@ def abstract(request,file):
         raise Http404('Abstract not found.')
 
     ip = get_client_ip(request)
-    user = request.META.get('HTTP_USER_AGEMT',"")
+    user_agent = request.META.get('HTTP_USER_AGEMT',"")
     path = request.path
 
     #Someone has seen the page
     PageView.objects.create(
         ip_address=ip,
         path=path,
-        user_agent=user
+        user_agent=user_agent
     )
 
     #Some wants to download the file
@@ -65,7 +65,7 @@ def abstract(request,file):
                 pdf=file,
                 time=timezone.now()
             )
-            #all the last downloads in the last 4 min by this emial
+            #All the last downloads in the last 4 min by this emial
             recent = Download.objects.filter(
                         email=email,
                         time=timezone.now() - timedelta(minutes=4)
@@ -78,6 +78,7 @@ def abstract(request,file):
     context = helper_side_panel(request)
     context['form'] = down_form
     return render(request,"abstract.html",context)
+
 
 def doc_preview(request,file):
     if not os.path.exists(file):
