@@ -70,7 +70,7 @@ def abstract(request,file):
                         email=email,
                         time=timezone.now() - timedelta(minutes=4)
                     ).count()
-            if recent >= 4:
+            if recent >= 3:
                 return HttpResponse('Too many downloads. Try again later')
     else:
         down_form = download_form()
