@@ -1,6 +1,4 @@
 from django.http       import HttpResponse, JsonResponse, FileResponse, Http404
-from django.core.files import File
-from django.conf       import settings
 from django.shortcuts  import render
 from django.utils      import timezone
 from datetime          import timedelta
